@@ -1,6 +1,5 @@
-package com.ares.biz.service.test;
+package com.ares.service.test;
 
-import com.ares.api.service.test.TestService;
 import org.springframework.stereotype.Service;
 
 /**

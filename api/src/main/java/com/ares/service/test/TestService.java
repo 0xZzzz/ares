@@ -1,4 +1,4 @@
-package com.ares.api.service.test;
+package com.ares.service.test;
 
 /**
  * 测试服务

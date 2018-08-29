@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan(value = "com.up")
+@ComponentScan(value = "com.ares")
 @SpringBootApplication
 @PropertySource(value = {"application.properties"})
 @ImportResource(locations = {"classpath*:spring/spring-*.xml"})

@@ -12,8 +12,8 @@ public class TestController {
     private TestService testService;
 
     @RequestMapping("/test")
-    public String test() {
-        return testService.test();
+    public String test(String str) {
+        return testService.test(str);
     }
 
 }

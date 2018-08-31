@@ -5,6 +5,6 @@ package com.ares.service.test;
  */
 public interface TestService {
 
-    String test();
+    String test(String str);
 
 }

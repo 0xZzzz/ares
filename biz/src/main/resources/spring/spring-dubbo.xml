@@ -8,6 +8,6 @@
 
     <dubbo:application name="${application.name}"/>
 
-    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}" port="${dubbo.registry.port}"/>
+    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"/>
 
 </beans>

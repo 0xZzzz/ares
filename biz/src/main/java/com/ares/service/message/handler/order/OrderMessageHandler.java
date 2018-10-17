@@ -6,13 +6,15 @@ import com.ares.domain.OrderMessage;
 import com.ares.enums.OrderTypeEnum;
 import com.ares.service.message.handler.AbstractSingleMessageHandler;
 import org.apache.rocketmq.common.message.MessageExt;
+import org.springframework.stereotype.Service;
 
 /**
  * 订单消息处理器
  *
- * @author 0xzzzz
+ * @author 0xZzzz
  * @date 2018/10/16
  */
+@Service
 public class OrderMessageHandler extends AbstractSingleMessageHandler<OrderMessage> {
 
     @Override

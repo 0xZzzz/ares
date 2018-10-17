@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * 订单状态枚举
  *
- * @author 0xzzzz
+ * @author 0xZzzz
  * @date 2018/10/17
  */
 public enum OrderStatusEnum {

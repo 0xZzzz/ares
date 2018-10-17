@@ -4,16 +4,17 @@ import com.ares.common.exception.SystemException;
 import com.ares.domain.Order;
 import com.ares.domain.OrderMessage;
 import com.ares.enums.OrderStatusEnum;
+import org.springframework.beans.factory.InitializingBean;
 
 import java.util.Date;
 
 /**
  * 订单状态变更处理器
  *
- * @author 0xzzzz
+ * @author 0xZzzz
  * @date 2018/10/16
  */
-public abstract class AbstractOrderStatusHandler implements OrderStatusHandler {
+public abstract class AbstractOrderStatusHandler implements OrderStatusHandler, InitializingBean {
 
     @Override
     public void handle(OrderMessage message, Order order) throws Exception {
@@ -78,4 +79,8 @@ public abstract class AbstractOrderStatusHandler implements OrderStatusHandler {
      */
     protected abstract void handle(OrderMessage message, Order order, Order updateParam) throws Exception;
 
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        OrderStatusHandlerChain.add(this);
+    }
 }

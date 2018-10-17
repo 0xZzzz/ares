@@ -3,13 +3,15 @@ package com.ares.service.message.handler.order;
 import com.ares.domain.Order;
 import com.ares.domain.OrderMessage;
 import com.ares.enums.OrderStatusEnum;
+import org.springframework.stereotype.Service;
 
 /**
  * 取消订单状态处理
  *
- * @author 0xzzzz
+ * @author 0xZzzz
  * @date 2018/10/17
  */
+@Service
 public class CancelOrderHandler extends AbstractOrderStatusHandler {
 
     @Override
@@ -23,7 +25,7 @@ public class CancelOrderHandler extends AbstractOrderStatusHandler {
     }
 
     @Override
-    protected void handle(OrderMessage message, Order order, Order updateParam) {
+    protected void handle(OrderMessage message, Order order, Order updateParam) throws Exception {
         cancelOrder(updateParam);
         notifyUser(order.getUserId());
     }

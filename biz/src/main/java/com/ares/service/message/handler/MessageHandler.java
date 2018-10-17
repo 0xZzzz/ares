@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 消息处理器
  *
- * @author 0xzzzz
+ * @author 0xZzzz
  * @date 2018/10/16
  */
 public interface MessageHandler {

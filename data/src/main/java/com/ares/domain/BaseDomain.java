@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * 实体基类
  *
- * @author 0xzzzz
+ * @author 0xZzzz
  * @date 2018/10/17
  */
 public class BaseDomain {

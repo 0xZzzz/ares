@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 订单消息实体
  *
- * @author 0xzzzz
+ * @author 0xZzzz
  * @date 2018/10/16
  */
 @Data

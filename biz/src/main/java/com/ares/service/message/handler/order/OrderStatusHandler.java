@@ -6,7 +6,7 @@ import com.ares.domain.OrderMessage;
 /**
  * 订单状态处理
  *
- * @author 0xzzzz
+ * @author 0xZzzz
  * @date 2018/10/16
  */
 public interface OrderStatusHandler {

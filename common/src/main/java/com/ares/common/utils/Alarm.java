@@ -3,7 +3,7 @@ package com.ares.common.utils;
 /**
  * 告警
  *
- * @author 0xzzzz
+ * @author 0xZzzz
  * @date 2018/10/16
  */
 public class Alarm {

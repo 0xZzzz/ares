@@ -6,7 +6,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <dubbo:service interface="com.ares.service.test.TestService" ref="testServiceImpl"
-                   group="${dubbo.provider.group}"/>
+    <!--<dubbo:service interface="com.ares.service.test.TestService" ref="testServiceImpl"
+                   group="${dubbo.provider.group}"/>-->
 
 </beans>

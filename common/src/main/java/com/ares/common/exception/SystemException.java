@@ -12,4 +12,7 @@ public class SystemException extends RuntimeException {
         super(message);
     }
 
+    public SystemException(Throwable cause) {
+        super(cause);
+    }
 }

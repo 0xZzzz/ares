@@ -1,4 +1,4 @@
-package com.ares.service.message.handler;
+package com.ares.service.message.handler.order;
 
 import com.ares.domain.Order;
 import com.ares.domain.OrderMessage;

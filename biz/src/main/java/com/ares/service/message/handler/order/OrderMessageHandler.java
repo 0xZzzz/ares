@@ -1,10 +1,11 @@
-package com.ares.service.message.handler;
+package com.ares.service.message.handler.order;
 
 import com.alibaba.fastjson.JSON;
 import com.ares.domain.Order;
 import com.ares.domain.OrderMessage;
 import com.ares.enums.OrderTypeEnum;
-import com.ares.service.middleware.Message;
+import com.ares.service.message.handler.AbstractSingleMessageHandler;
+import org.apache.rocketmq.common.message.MessageExt;
 
 /**
  * 订单消息处理器
@@ -15,8 +16,8 @@ import com.ares.service.middleware.Message;
 public class OrderMessageHandler extends AbstractSingleMessageHandler<OrderMessage> {
 
     @Override
-    protected OrderMessage parse(Message message) {
-        return JSON.parseObject(message.getText(), OrderMessage.class);
+    protected OrderMessage parse(MessageExt message) {
+        return JSON.parseObject(message.getBody(), OrderMessage.class);
     }
 
     @Override
@@ -25,7 +26,7 @@ public class OrderMessageHandler extends AbstractSingleMessageHandler<OrderMessa
     }
 
     @Override
-    protected void handle(Message message, OrderMessage domain) throws Exception {
+    protected void handle(MessageExt message, OrderMessage domain) throws Exception {
         OrderStatusHandlerChain.handle(domain, fromDB(domain.getOrderId()));
     }
 

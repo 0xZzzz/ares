@@ -1,6 +1,6 @@
 package com.ares.service.message.handler;
 
-import com.ares.service.middleware.Message;
+import org.apache.rocketmq.common.message.MessageExt;
 
 import java.util.List;
 
@@ -18,6 +18,6 @@ public interface MessageHandler {
      * @param messageList 消息集合
      * @throws Exception 消息处理异常
      */
-    void handle(List<Message> messageList) throws Exception;
+    void handle(List<MessageExt> messageList) throws Exception;
 
 }

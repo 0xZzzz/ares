@@ -9,11 +9,13 @@ import lombok.Data;
  * @date 2018/10/16
  */
 @Data
-public class Order {
+public class Order extends BaseDomain {
 
     private Long orderId;
 
     private Integer orderStatus;
+
+    private Long userId;
 
     public Order() {
     }

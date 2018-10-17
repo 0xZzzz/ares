@@ -2,7 +2,7 @@ package com.ares.service.message.handler;
 
 import com.ares.common.exception.SystemException;
 import com.ares.common.utils.CollectionUtils;
-import com.ares.service.middleware.Message;
+import org.apache.rocketmq.common.message.MessageExt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,11 +19,11 @@ public abstract class AbstractSingleMessageHandler<D> implements MessageHandler 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
-    public void handle(List<Message> messageList) throws Exception {
+    public void handle(List<MessageExt> messageList) throws Exception {
         if (messageList.size() != 1) {
             throw new SystemException("消息数量不为1");
         }
-        Message message = CollectionUtils.first(messageList);
+        MessageExt message = CollectionUtils.first(messageList);
         // 解析消息
         D domain = parse(message);
         // 校验解析后的消息
@@ -40,7 +40,7 @@ public abstract class AbstractSingleMessageHandler<D> implements MessageHandler 
      * @param message 消息对象
      * @return M
      */
-    protected abstract D parse(Message message);
+    protected abstract D parse(MessageExt message);
 
     /**
      * 校验消息实体
@@ -59,6 +59,6 @@ public abstract class AbstractSingleMessageHandler<D> implements MessageHandler 
      * @param domain  消息实体
      * @throws Exception 处理异常
      */
-    protected abstract void handle(Message message, D domain) throws Exception;
+    protected abstract void handle(MessageExt message, D domain) throws Exception;
 
 }

@@ -6,6 +6,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 
+/**
+ * 启动类
+ *
+ * @author 0xZzzz
+ */
 @Configuration
 @SpringBootApplication
 @PropertySource(value = {"application.properties"})

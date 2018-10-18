@@ -4,9 +4,9 @@ import com.ares.common.exception.BusinessException;
 import com.ares.common.exception.SystemException;
 import com.ares.common.utils.Alarm;
 import com.ares.service.message.handler.MessageHandler;
-import org.apache.rocketmq.client.consumer.listener.ConsumeOrderlyContext;
-import org.apache.rocketmq.client.consumer.listener.ConsumeOrderlyStatus;
-import org.apache.rocketmq.client.consumer.listener.MessageListenerOrderly;
+import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
+import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
+import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.common.message.MessageExt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,26 +19,26 @@ import java.util.List;
  * @author 0xZzzz
  * @date 2018/10/16
  */
-public class CommonMessageListener implements MessageListenerOrderly {
+public class CommonMessageListener implements MessageListenerConcurrently {
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private boolean isLogMessage;
+    private boolean isLogMessage = true;
 
     private MessageHandler messageHandler;
 
     @Override
-    public ConsumeOrderlyStatus consumeMessage(List<MessageExt> list, ConsumeOrderlyContext consumeOrderlyContext) {
+    public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
         Alarm.start();
         try {
             if (isLogMessage) {
                 logger.info("message: {}", list);
             }
             messageHandler.handle(list);
-            return ConsumeOrderlyStatus.SUCCESS;
+            return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
         } catch (BusinessException e) {
             logger.error("biz error!", e);
-            return ConsumeOrderlyStatus.SUCCESS;
+            return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
         } catch (Exception e) {
             logger.error("error!", e);
             Alarm.error();

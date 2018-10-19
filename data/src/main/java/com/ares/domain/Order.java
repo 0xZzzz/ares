@@ -17,6 +17,18 @@ public class Order extends BaseDomain {
 
     private Long userId;
 
+    private Long price;
+
+    /**
+     * 商品扣点
+     */
+    private Double commission;
+
+    /**
+     * 支付方式
+     */
+    private Integer paymentType;
+
     public Order() {
     }
 

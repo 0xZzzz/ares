@@ -1,7 +1,6 @@
 package com.ares.service.message.observer;
 
 import com.ares.domain.Order;
-import com.ares.service.message.handler.order.AbstractOrderFinishObserver;
 import org.springframework.stereotype.Service;
 
 /**

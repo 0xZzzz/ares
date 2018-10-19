@@ -1,7 +1,6 @@
 package com.ares.service.message.observer;
 
 import com.ares.domain.Order;
-import com.ares.service.message.handler.order.AbstractOrderFinishObserver;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Service;
  * @date 2018/10/17
  */
 @Service
-public class NotityUserObserver extends AbstractOrderFinishObserver {
+public class NotifyUserObserver extends AbstractOrderFinishObserver {
 
     @Override
     protected void doNotify(Order order) {

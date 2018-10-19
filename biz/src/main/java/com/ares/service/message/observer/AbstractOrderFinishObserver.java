@@ -1,8 +1,8 @@
-package com.ares.service.message.handler.order;
+package com.ares.service.message.observer;
 
 import com.ares.common.utils.Alarm;
 import com.ares.domain.Order;
-import com.ares.service.message.observer.OrderFinishObserver;
+import com.ares.service.message.handler.order.FinishOrderHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;

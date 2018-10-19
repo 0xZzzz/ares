@@ -3,6 +3,7 @@ package com.ares.service.message.observer;
 import com.ares.domain.ChargeRequest;
 import com.ares.domain.Order;
 import com.ares.enums.ChargeTypeEnum;
+import com.ares.service.settlement.Selector;
 
 /**
  * 计费观察者基类
@@ -53,6 +54,7 @@ public abstract class AbstractChargeObserver extends AbstractOrderFinishObserver
      */
     protected void charge(ChargeRequest request) {
         System.out.println("计费服务调用");
+        Selector.select(request.getChargeType()).settlement(request);
     }
 
 }

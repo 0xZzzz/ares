@@ -1,6 +1,7 @@
 package com.ares.service.settlement;
 
 import com.ares.enums.ChargeTypeEnum;
+import org.springframework.stereotype.Service;
 
 /**
  * 代收
@@ -8,7 +9,8 @@ import com.ares.enums.ChargeTypeEnum;
  * @author 0xzzzz
  * @date 2018/10/19
  */
-public class CollectionSettlementStrategy extends AbstractFwSettlementStrategy {
+@Service
+public class CollectionSettlementStrategy extends AbstractSpecialSettlementStrategy {
 
     @Override
     protected ChargeTypeEnum getChargeType() {

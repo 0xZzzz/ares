@@ -2,6 +2,7 @@ package com.ares.service.settlement;
 
 import com.ares.domain.FinanceChargeRequest;
 import com.ares.enums.ChargeTypeEnum;
+import org.springframework.stereotype.Service;
 
 /**
  * 图书计费
@@ -9,6 +10,7 @@ import com.ares.enums.ChargeTypeEnum;
  * @author 0xzzzz
  * @date 2018/10/19
  */
+@Service
 public class BookSettlementStrategy extends AbstractSettlementStrategy {
 
     @Override

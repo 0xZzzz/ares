@@ -118,6 +118,6 @@ public abstract class AbstractSettlementStrategy implements SettlementStrategy, 
 
     @Override
     public void afterPropertiesSet() throws Exception {
-
+        Selector.add(getChargeType().getType(), this);
     }
 }

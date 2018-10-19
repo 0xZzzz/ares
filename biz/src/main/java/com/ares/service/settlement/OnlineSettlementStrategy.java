@@ -2,6 +2,7 @@ package com.ares.service.settlement;
 
 import com.ares.domain.ChargeInfo;
 import com.ares.enums.ChargeTypeEnum;
+import org.springframework.stereotype.Service;
 
 /**
  * 在线支付
@@ -9,6 +10,7 @@ import com.ares.enums.ChargeTypeEnum;
  * @author 0xzzzz
  * @date 2018/10/19
  */
+@Service
 public class OnlineSettlementStrategy extends AbstractSettlementStrategy {
 
     @Override

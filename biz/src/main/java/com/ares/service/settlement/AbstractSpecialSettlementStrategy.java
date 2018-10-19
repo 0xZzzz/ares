@@ -8,8 +8,10 @@ import java.util.Map;
 
 /**
  * 特殊业务结算基类
+ *
+ * @author 0xZzzz
  */
-public abstract class AbstractFwSettlementStrategy extends AbstractSettlementStrategy {
+public abstract class AbstractSpecialSettlementStrategy extends AbstractSettlementStrategy {
 
     /**
      * 特殊订单类型，作用于orgId

@@ -3,13 +3,13 @@ package com.ares.domain;
 import lombok.Data;
 
 /**
- * 计费请求
+ * 计费信息
  *
  * @author 0xzzzz
  * @date 2018/10/18
  */
 @Data
-public class ChargeRequest {
+public class ChargeInfo {
 
     private Long orderId;
 
@@ -22,5 +22,7 @@ public class ChargeRequest {
     private Integer orderType;
 
     private String requestId;
+
+    private Long orgId;
 
 }

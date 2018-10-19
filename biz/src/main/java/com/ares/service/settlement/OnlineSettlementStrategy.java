@@ -1,0 +1,23 @@
+package com.ares.service.settlement;
+
+import com.ares.domain.ChargeInfo;
+import com.ares.enums.ChargeTypeEnum;
+
+/**
+ * 在线支付
+ *
+ * @author 0xzzzz
+ * @date 2018/10/19
+ */
+public class OnlineSettlementStrategy extends AbstractSettlementStrategy {
+
+    @Override
+    protected ChargeTypeEnum getChargeType() {
+        return ChargeTypeEnum.ONLINE;
+    }
+
+    @Override
+    protected void processSubRequestBeforeSubmit(ChargeInfo request) {
+        request.setOrgId(2L);
+    }
+}

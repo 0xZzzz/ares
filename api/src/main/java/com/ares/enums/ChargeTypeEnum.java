@@ -23,7 +23,22 @@ public enum ChargeTypeEnum {
     /**
      * 代付
      */
-    PAY(3);
+    PAY(3),
+
+    /**
+     * 图书业务
+     */
+    BOOK(4),
+
+    /**
+     * 平账
+     */
+    RECONCILIATION(5),
+
+    /**
+     * 代收
+     */
+    COLLECT(6);
 
     @Getter
     private int type;

@@ -45,7 +45,7 @@ public class CancelOrderHandler extends AbstractOrderStatusHandler {
      * @param userId 用户id
      */
     private void notifyUser(Long userId) {
-        System.out.println(userId + "您的订单已取消");
+        logger.info("您的订单已取消。userId: {}", userId);
     }
 
 }

@@ -9,15 +9,12 @@ package com.ares.common.utils;
 public class Alarm {
 
     public static void start() {
-        System.out.println("alarm start!");
     }
 
     public static void end() {
-        System.out.println("alarm end!");
     }
 
     public static void error() {
-        System.out.println("alarm error!");
     }
 
 }

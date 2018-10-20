@@ -17,4 +17,10 @@ public class OrderMessage {
 
     private Integer orderType;
 
+    private Long userId;
+
+    private Long price;
+
+    private Integer paymentType;
+
 }

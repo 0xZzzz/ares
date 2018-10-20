@@ -4,6 +4,8 @@ import com.ares.common.exception.SystemException;
 import com.ares.domain.Order;
 import com.ares.domain.OrderMessage;
 import com.ares.enums.OrderStatusEnum;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 
 import java.util.Date;
@@ -15,6 +17,8 @@ import java.util.Date;
  * @date 2018/10/16
  */
 public abstract class AbstractOrderStatusHandler implements OrderStatusHandler, InitializingBean {
+
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public void handle(OrderMessage message, Order order) throws Exception {

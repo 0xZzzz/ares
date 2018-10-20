@@ -21,10 +21,9 @@ public abstract class AbstractOrderFinishObserver implements OrderFinishObserver
     public void notify(Order order) {
         Alarm.start();
         try {
-            logger.info("notify order: {}", order);
             doNotify(order);
         } catch (Throwable e) {
-            logger.error("notify error! order: {}", order);
+            logger.error("notify error!", e);
             Alarm.error();
         } finally {
             Alarm.end();

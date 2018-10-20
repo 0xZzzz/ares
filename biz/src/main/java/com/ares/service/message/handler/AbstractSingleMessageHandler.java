@@ -26,6 +26,7 @@ public abstract class AbstractSingleMessageHandler<D> implements MessageHandler 
         MessageExt message = CollectionUtils.first(messageList);
         // 解析消息
         D domain = parse(message);
+        logger.info("handler messageDomain: {}", domain);
         // 校验解析后的消息
         if (!validate(domain)) {
             logger.info("validate not pass! domain: {}", domain);

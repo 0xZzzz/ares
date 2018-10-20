@@ -3,13 +3,18 @@ package com.ares.controller;
 import com.alibaba.fastjson.JSON;
 import com.ares.common.utils.RocketMQUtils;
 import com.ares.domain.OrderMessage;
-import com.ares.enums.OrderStatusEnum;
 import com.ares.enums.OrderTypeEnum;
+import com.ares.enums.PaymentTypeEnum;
 import com.ares.service.test.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 测试controller
+ *
+ * @author 0xZzzz
+ */
 @RestController
 public class TestController {
 
@@ -25,11 +30,14 @@ public class TestController {
     }
 
     @RequestMapping("/send")
-    public String send() {
+    public String send(Integer orderStatus) {
         OrderMessage message = new OrderMessage();
         message.setOrderId(1L);
-        message.setOrderStatus(OrderStatusEnum.CANCELED.getStatus());
+        message.setOrderStatus(orderStatus);
         message.setOrderType(OrderTypeEnum.POP.getType());
+        message.setUserId(1L);
+        message.setPrice(10L);
+        message.setPaymentType(PaymentTypeEnum.ONLINE.getCode());
         rocketMQUtils.send("order", JSON.toJSONString(message));
         return "OK";
     }

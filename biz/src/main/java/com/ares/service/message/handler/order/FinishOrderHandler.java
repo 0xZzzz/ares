@@ -42,7 +42,7 @@ public class FinishOrderHandler extends AbstractOrderStatusHandler {
      * @param updateParam 更新订单参数
      */
     private void finishOrder(Order updateParam) {
-        System.out.println("完成订单" + updateParam.getOrderId());
+        logger.info("您的订单已完成。orderId: {}", updateParam.getOrderId());
     }
 
     /**

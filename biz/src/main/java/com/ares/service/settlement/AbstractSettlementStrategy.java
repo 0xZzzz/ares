@@ -81,7 +81,9 @@ public abstract class AbstractSettlementStrategy implements SettlementStrategy, 
     }
 
     /**
-     * @return 计费结算类型
+     * 获取计费结算类型
+     *
+     * @return 计费结算类型x
      */
     protected abstract ChargeTypeEnum getChargeType();
 
@@ -101,6 +103,7 @@ public abstract class AbstractSettlementStrategy implements SettlementStrategy, 
      * @return 响应结果
      */
     protected FinanceChargeResponse submitCharge(FinanceChargeRequest request) {
+        logger.info("提交计费结算：{}", getChargeType().name());
         return new FinanceChargeResponse();
     }
 

@@ -3,9 +3,11 @@ package com.ares.service.message.handler.order;
 import com.alibaba.fastjson.JSON;
 import com.ares.domain.Order;
 import com.ares.domain.OrderMessage;
+import com.ares.enums.OrderStatusEnum;
 import com.ares.enums.OrderTypeEnum;
 import com.ares.service.message.handler.AbstractSingleMessageHandler;
 import org.apache.rocketmq.common.message.MessageExt;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 /**
@@ -29,18 +31,22 @@ public class OrderMessageHandler extends AbstractSingleMessageHandler<OrderMessa
 
     @Override
     protected void handle(MessageExt message, OrderMessage domain) throws Exception {
-        OrderStatusHandlerChain.handle(domain, fromDB(domain.getOrderId()));
+        OrderStatusHandlerChain.handle(domain, fromDB(domain));
     }
 
     /**
      * DB查询订单
      *
-     * @param orderId 订单id
+     * @param domain 订单消息
      * @return 订单实体
      */
-    private Order fromDB(Long orderId) {
-        // DB查询
-        return new Order(orderId);
+    private Order fromDB(OrderMessage domain) {
+        Order order = new Order();
+        BeanUtils.copyProperties(domain, order);
+        order.setOrderStatus(OrderStatusEnum.WAITING_PAYMENT.getStatus());
+        order.setCommission(0.1);
+        logger.info("handle order: {}", order);
+        return order;
     }
 
 }

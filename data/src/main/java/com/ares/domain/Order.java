@@ -29,6 +29,8 @@ public class Order extends BaseDomain {
      */
     private Integer paymentType;
 
+    private Integer orderType;
+
     public Order() {
     }
 

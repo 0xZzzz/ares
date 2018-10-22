@@ -13,9 +13,19 @@ import java.util.Map;
 public enum OrderTypeEnum {
 
     /**
-     * 订单类型
+     * POP
      */
-    POP(1);
+    POP(1),
+
+    /**
+     * 自营
+     */
+    SELF(2),
+
+    /**
+     * 图书
+     */
+    BOOK(3);
 
     private static final Map<Integer, OrderTypeEnum> MAP = Collections.unmodifiableMap(
         new HashMap<Integer, OrderTypeEnum>() {

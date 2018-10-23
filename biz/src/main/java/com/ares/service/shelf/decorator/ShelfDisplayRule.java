@@ -1,4 +1,4 @@
-package com.ares.service.shelf;
+package com.ares.service.shelf.decorator;
 
 import com.ares.domain.ShelfDisplayContext;
 
@@ -16,12 +16,5 @@ public interface ShelfDisplayRule {
      * @param ctx 货架陈列上下文
      */
     void execute(ShelfDisplayContext ctx);
-
-    /**
-     * 顺序
-     *
-     * @return 顺序
-     */
-    int getSort();
 
 }

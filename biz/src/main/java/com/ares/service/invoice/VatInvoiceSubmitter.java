@@ -24,7 +24,7 @@ public class VatInvoiceSubmitter extends AbstractSubmitterHandler {
     @Override
     protected String doSubmit(Order order, Invoice invoice) {
         System.out.println("增票提交");
-        return "general";
+        return "vat";
     }
 
 }

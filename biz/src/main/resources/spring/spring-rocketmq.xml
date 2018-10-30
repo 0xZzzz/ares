@@ -19,7 +19,7 @@
         <property name="messageHandler" ref="orderMessageHandler"/>
     </bean>
 
-    <bean id="rockmqProducer" class="org.apache.rocketmq.client.producer.DefaultMQProducer" init-method="start"
+    <bean id="rocketmqProducer" class="org.apache.rocketmq.client.producer.DefaultMQProducer" init-method="start"
           destroy-method="shutdown">
         <property name="producerGroup" value="${application.name}"/>
         <property name="namesrvAddr" value="${rocketmq.nameserver.address}"/>

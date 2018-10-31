@@ -14,7 +14,7 @@ public class PerformanceObserver extends AbstractOrderFinishObserver {
 
     @Override
     protected void doNotify(Order order) {
-        System.out.println("履约订单" + order.getOrderId());
+        System.out.println("观察者：履约。履约订单" + order.getOrderId());
     }
 
 }

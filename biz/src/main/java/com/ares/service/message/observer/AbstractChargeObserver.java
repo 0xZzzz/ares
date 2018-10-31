@@ -53,7 +53,7 @@ public abstract class AbstractChargeObserver extends AbstractOrderFinishObserver
      * @param request 计费请求
      */
     protected void charge(ChargeRequest request) {
-        System.out.println("计费服务调用");
+        System.out.println("观察者：计费服务调用" + getChargeType().name());
         Selector.select(request.getChargeType()).settlement(request);
     }
 

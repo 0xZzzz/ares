@@ -103,7 +103,7 @@ public abstract class AbstractSettlementStrategy implements SettlementStrategy, 
      * @return 响应结果
      */
     protected FinanceChargeResponse submitCharge(FinanceChargeRequest request) {
-        logger.info("提交计费结算：{}", getChargeType().name());
+        System.out.println("提交计费结算：" + getChargeType().name());
         return new FinanceChargeResponse();
     }
 

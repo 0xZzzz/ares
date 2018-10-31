@@ -19,6 +19,7 @@ public class InvoiceObserver extends AbstractOrderFinishObserver {
 
     @Override
     protected void doNotify(Order order) {
+        System.out.println("观察者：发票提交");
         invoiceSubmitHandler.submitRequisition(order);
     }
 

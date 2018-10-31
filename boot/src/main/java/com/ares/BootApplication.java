@@ -11,7 +11,6 @@ import org.springframework.context.annotation.PropertySource;
  *
  * @author 0xZzzz
  */
-@Configuration
 @SpringBootApplication
 @PropertySource(value = {"application.properties"})
 @ImportResource(locations = {"classpath*:spring/spring-*.xml"})

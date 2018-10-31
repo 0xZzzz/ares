@@ -14,7 +14,7 @@ public class NotifyUserObserver extends AbstractOrderFinishObserver {
 
     @Override
     protected void doNotify(Order order) {
-        System.out.println(String.format("%s您好！您的订单%s已完成", order.getUserId(), order.getOrderId()));
+        System.out.println(String.format("观察者：通知用户。%s您好！您的订单%s已完成", order.getUserId(), order.getOrderId()));
     }
 
 }

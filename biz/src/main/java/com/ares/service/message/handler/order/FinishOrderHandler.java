@@ -4,6 +4,9 @@ import com.ares.domain.Order;
 import com.ares.domain.OrderMessage;
 import com.ares.enums.OrderStatusEnum;
 import com.ares.service.message.observer.OrderFinishObserver;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,9 +19,9 @@ import java.util.List;
  * @date 2018/10/17
  */
 @Service
-public class FinishOrderHandler extends AbstractOrderStatusHandler {
+public class FinishOrderHandler extends AbstractOrderStatusHandler implements ApplicationContextAware {
 
-    private static List<OrderFinishObserver> observers = new ArrayList<>();
+    private static List<OrderFinishObserver> observers;
 
     @Override
     protected OrderStatusEnum getSupportedOrderStatus() {
@@ -46,21 +49,17 @@ public class FinishOrderHandler extends AbstractOrderStatusHandler {
     }
 
     /**
-     * 添加观察者
-     *
-     * @param observer 观察者对象
-     */
-    public static void addObserver(OrderFinishObserver observer) {
-        observers.add(observer);
-    }
-
-    /**
      * 通知观察者
      *
      * @param order 订单实体
      */
-    private static void notifyObserver(Order order) {
+    private void notifyObserver(Order order) {
         observers.forEach(observer -> observer.notify(order));
     }
 
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        observers = new ArrayList<>();
+        observers.addAll(applicationContext.getBeansOfType(OrderFinishObserver.class).values());
+    }
 }

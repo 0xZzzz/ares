@@ -4,6 +4,7 @@ import lombok.Data;
 
 /**
  * 订单消息实体
+ * eg: {"orderId":1, "orderStatus":2, "orderType":2, "userId":1, "price":10, "paymentType":1}
  *
  * @author 0xZzzz
  * @date 2018/10/16

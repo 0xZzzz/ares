@@ -24,6 +24,7 @@ public class DeadlockCar extends Thread {
         west.start();
         south.start();
         north.start();
+        // 这里死锁
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {

@@ -2,6 +2,7 @@ package com.ares.service.concurrent;
 
 import com.ares.common.utils.NamingThreadFactory;
 
+import java.util.Random;
 import java.util.concurrent.*;
 
 /**
@@ -26,6 +27,7 @@ public class ExchangerDemo {
     private static void exchange(String txt) {
         try {
             System.out.println(Thread.currentThread().getName() + "正在把数据" + txt + "换出去");
+            TimeUnit.SECONDS.sleep(new Random().nextInt(5));
             System.out.println(Thread.currentThread().getName() + "交换回的数据为" + EXCHANGER.exchange(txt));
         } catch (Exception e) {
             e.printStackTrace();

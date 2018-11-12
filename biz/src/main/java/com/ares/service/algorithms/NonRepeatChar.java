@@ -6,12 +6,17 @@ import java.util.*;
 import java.util.Map.Entry;
 
 /**
- * Java Program to find first duplicate, non-repeated character in a String. * It demonstrate three simple example to do
- * this programming problem.
+ * 在String中查找第一个非重复字符
  *
  * @author 0xZzzz
  */
-public class Programming {
+public class NonRepeatChar {
+
+    public static void main(String[] args) {
+        System.out.println(getFirstNonRepeatedChar("abcdefghija"));
+        System.out.println(firstNonRepeatingChar("java"));
+        System.out.println(firstNonRepeatedCharacter("hello"));
+    }
 
     /**
      * 使用LinkedHashMap查找String的第一个非重复字符
@@ -32,14 +37,19 @@ public class Programming {
         throw new RuntimeException("didn't find any non repeated Character");
     }
 
-    /** 只需一次传递即可在String中查找第一个不重复的字符。它使用两个存储来减少一次迭代，标准的空间换时间。
+    /**
+     * 只需一次传递即可在String中查找第一个不重复的字符。
+     * 它使用两个存储来减少一次迭代，标准的空间换时间。
+     * 由于我们分别存储重复和非重复的字符，因此在迭代结束时，List中的第一个元素是String中的第一个非重复字符。
      */
     public static char firstNonRepeatingChar(String word) {
         Set<Character> repeating = new HashSet<>();
         List<Character> nonRepeating = new ArrayList<>();
         for (int i = 0; i < word.length(); i++) {
             char letter = word.charAt(i);
-            if (repeating.contains(letter)) { continue; }
+            if (repeating.contains(letter)) {
+                continue;
+            }
             if (nonRepeating.contains(letter)) {
                 nonRepeating.remove((Character)letter);
                 repeating.add(letter);

@@ -43,6 +43,22 @@ public class LinkedList {
         return false;
     }
 
+    /**
+     * 反转
+     */
+    public void reverse() {
+        Node pointer = head;
+        Node previous = null, current;
+        while (pointer != null) {
+            current = pointer;
+            pointer = pointer.next;
+            // 反转
+            current.next = previous;
+            previous = current;
+            head = current;
+        }
+    }
+
     @Override
     public String toString() {
         if (head == null) {

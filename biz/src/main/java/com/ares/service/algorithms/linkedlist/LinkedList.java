@@ -11,17 +11,18 @@ public class LinkedList {
 
     private Node tail;
 
-    private long length;
-
     public void add(String data) {
-        length++;
+        add(new Node(data));
+    }
+
+    public void add(Node node) {
         // first
         if (head == null) {
-            head = new Node(data);
+            head = node;
             tail = head;
             return;
         }
-        tail.next = new Node(data);
+        tail.next = node;
         tail = tail.next;
     }
 
@@ -29,16 +30,34 @@ public class LinkedList {
         return head;
     }
 
-    public long length() {
-        return length;
+    public boolean isCyclic() {
+        Node fast = head;
+        Node slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString() {
-        return head.print();
+        if (head == null) {
+            return null;
+        }
+        Node current = head;
+        StringBuilder stringBuilder = new StringBuilder(head.data);
+        while (current.next != null) {
+            current = current.next;
+            stringBuilder.append(" --> ").append(current.data);
+        }
+        return stringBuilder.toString();
     }
 
-    public class Node {
+    public static class Node {
 
         private String data;
 
@@ -61,8 +80,9 @@ public class LinkedList {
             return data;
         }
 
-        public String print() {
-            return next == null ? data : data + " --> " + next.print();
+        @Override
+        public boolean equals(Object obj) {
+            return obj instanceof Node && data.equals(((Node)obj).data);
         }
     }
 

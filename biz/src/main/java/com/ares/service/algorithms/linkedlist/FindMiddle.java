@@ -14,8 +14,8 @@ public class FindMiddle {
         linkedList.add("3");
         linkedList.add("4");
         linkedList.add("5");
-        System.out.println(linkedList);
-        System.out.println(findMiddle(linkedList));
+        System.out.println("LinkedList: " + linkedList);
+        System.out.println("middle is " + findMiddle(linkedList));
     }
 
     public static String findMiddle(LinkedList linkedList) {

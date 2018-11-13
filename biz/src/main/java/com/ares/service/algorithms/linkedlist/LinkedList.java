@@ -87,6 +87,24 @@ public class LinkedList {
         return 1 + lengthRecursively(current.next());
     }
 
+    /**
+     * 从最后一个节点向前拿到第n个节点的数据
+     * 使fast和slow之前相隔n，然后两者指针同时向后移动，这样当fast移动到最后一个节点的时候slow的值就是我们需要的值
+     */
+    public String getLastNode(int n) {
+        Node fast = head;
+        Node slow = head;
+        int start = 1;
+        while (fast.next != null) {
+            fast = fast.next;
+            start++;
+            if (start > n) {
+                slow = slow.next;
+            }
+        }
+        return slow.data;
+    }
+
     @Override
     public String toString() {
         if (head == null) {

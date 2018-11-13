@@ -1,5 +1,7 @@
 package com.ares.service.algorithms.linkedlist;
 
+import java.util.HashSet;
+
 /**
  * 链表
  *
@@ -47,8 +49,7 @@ public class LinkedList {
      * 反转，遍历将head指针移向最后一个节点，将所有节点的next节点指向前一个节点，即可完成反转
      */
     public void reverse() {
-        Node pointer = head;
-        Node previous = null, current;
+        Node pointer = head, previous = null, current;
         while (pointer != null) {
             current = pointer;
             pointer = pointer.next;
@@ -57,6 +58,25 @@ public class LinkedList {
             previous = current;
             head = current;
         }
+    }
+
+    private Node reverseRecursively(Node node) {
+        Node newHead;
+        // 到最后一个节点
+        if (node.next == null) {
+            return node;
+        }
+        newHead = reverseRecursively(node.next);
+        node.next.next = node;
+        node.next = null;
+        return newHead;
+    }
+
+    /**
+     * 使用递归将链表反转
+     */
+    public void reverseRecursively() {
+        head = reverseRecursively(head);
     }
 
     /**
@@ -88,8 +108,44 @@ public class LinkedList {
     }
 
     /**
-     * 从最后一个节点向前拿到第n个节点的数据
-     * 使fast和slow之前相隔n，然后两者指针同时向后移动，这样当fast移动到最后一个节点的时候slow的值就是我们需要的值
+     * 两次循环去重
+     */
+    public void removeDuplicates() {
+        Node ptr1 = head, ptr2;
+        while (ptr1 != null && ptr1.next != null) {
+            ptr2 = ptr1;
+            while (ptr2.next != null) {
+                if (ptr1.data.equals(ptr2.next.data)) {
+                    ptr2.next = ptr2.next.next;
+                } else {
+                    ptr2 = ptr2.next;
+                }
+            }
+            ptr1 = ptr1.next;
+        }
+    }
+
+    /**
+     * Set去重
+     */
+    public void removeDuplicate() {
+        HashSet<String> hs = new HashSet<>();
+        Node current = head;
+        Node prev = head;
+        while (current != null) {
+            String curVal = current.data;
+            if (hs.contains(curVal)) {
+                prev.next = current.next;
+            } else {
+                hs.add(curVal);
+                prev = current;
+            }
+            current = current.next;
+        }
+    }
+
+    /**
+     * 从最后一个节点向前拿到第n个节点的数据 使fast和slow之前相隔n，然后两者指针同时向后移动，这样当fast移动到最后一个节点的时候slow的值就是我们需要的值
      */
     public String getLastNode(int n) {
         Node fast = head;

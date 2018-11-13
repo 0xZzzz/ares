@@ -59,6 +59,34 @@ public class LinkedList {
         }
     }
 
+    /**
+     * 链表长度
+     */
+    public int length() {
+        int count = 0;
+        Node current = head;
+
+        while (current != null) {
+            count++;
+            current = current.next();
+        }
+        return count;
+    }
+
+    /**
+     * 链表长度，递归
+     */
+    public int lengthRecursively() {
+        return lengthRecursively(head);
+    }
+
+    private int lengthRecursively(Node current) {
+        if (current == null) {
+            return 0;
+        }
+        return 1 + lengthRecursively(current.next());
+    }
+
     @Override
     public String toString() {
         if (head == null) {

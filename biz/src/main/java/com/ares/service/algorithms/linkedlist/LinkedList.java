@@ -44,7 +44,7 @@ public class LinkedList {
     }
 
     /**
-     * 反转
+     * 反转，遍历将head指针移向最后一个节点，将所有节点的next节点指向前一个节点，即可完成反转
      */
     public void reverse() {
         Node pointer = head;

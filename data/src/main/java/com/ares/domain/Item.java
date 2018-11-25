@@ -10,10 +10,19 @@ import lombok.Data;
 @Data
 public class Item {
 
+    /**
+     * 商品名称
+     */
     private String name;
 
+    /**
+     * 品牌id
+     */
     private Long brandId;
 
+    /**
+     * 净含量
+     */
     private Long netWeight;
 
     public Item(String name, Long brandId, Long netWeight) {

@@ -15,12 +15,12 @@ public class Test {
 
         ShelfDisplayContext ctx = new ShelfDisplayContext();
         ctx.setSelectItemList(Lists.newArrayList(
-            new Item("3.1", 3L, 1L),
-            new Item("2.2", 2L, 2L),
-            new Item("3.2", 3L, 2L),
-            new Item("1.1", 1L, 1L),
-            new Item("2.1", 2L, 1L),
-            new Item("1.2", 1L, 2L)
+            new Item("康师傅1L", 3L, 1L),
+            new Item("娃哈哈2L", 2L, 2L),
+            new Item("康师傅2L", 3L, 2L),
+            new Item("今麦郎1L", 1L, 1L),
+            new Item("玩哈哈1L", 2L, 1L),
+            new Item("今麦郎2L", 1L, 2L)
         ));
         System.out.println();
         ShelfDisplayRule rule = new GroupShelfDisplayRule();

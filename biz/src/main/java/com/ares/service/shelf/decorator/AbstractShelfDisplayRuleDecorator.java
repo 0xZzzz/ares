@@ -3,7 +3,7 @@ package com.ares.service.shelf.decorator;
 import com.ares.domain.ShelfDisplayContext;
 
 /**
- * 货架陈列规则
+ * 货架陈列规则装饰者抽象类
  *
  * @author 0xzzzz
  * @date 2018/10/18

@@ -109,6 +109,8 @@ public class LinkedList {
 
     /**
      * 两次循环去重
+     *
+     * 时间复杂度：O(n^2)
      */
     public void removeDuplicates() {
         Node ptr1 = head, ptr2;
@@ -127,6 +129,8 @@ public class LinkedList {
 
     /**
      * Set去重
+     *
+     * 时间复杂度：平均为O(n)，假设哈希表访问时间平均为O(1)
      */
     public void removeDuplicate() {
         HashSet<String> hs = new HashSet<>();
@@ -145,7 +149,9 @@ public class LinkedList {
     }
 
     /**
-     * 从最后一个节点向前拿到第n个节点的数据 使fast和slow之前相隔n，然后两者指针同时向后移动，这样当fast移动到最后一个节点的时候slow的值就是我们需要的值
+     * 从最后一个节点向前拿到第n个节点的数据 使fast和slow之前相隔n，然后两者指针同时向后移动
+     * 这样当fast移动到最后一个节点的时候slow的值就是我们需要的值
+     * 时间复杂度：O(n)
      */
     public String getLastNode(int n) {
         Node fast = head;

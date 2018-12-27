@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * 查找字符串中的重复字符，并打印出来，要打印出重复的次数
  *
- * @author fansheng
+ * @author 0xZzzz
  * @since 2018/12/27
  */
 public class FindDuplicateCharacters {

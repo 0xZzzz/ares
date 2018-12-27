@@ -1,4 +1,4 @@
-package com.ares.service.algorithms;
+package com.ares.service.algorithms.string;
 
 import com.google.common.collect.Maps;
 

@@ -1,4 +1,4 @@
-package com.ares.service.algorithms;
+package com.ares.service.algorithms.array;
 
 import java.util.Arrays;
 import java.util.BitSet;

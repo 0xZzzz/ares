@@ -25,4 +25,14 @@ public class Person extends BaseModel {
      */
     private Byte gender;
 
+    /**
+     * 公司id
+     */
+    private Long companyId;
+
+    /**
+     * 公司信息
+     */
+    private Company company;
+
 }

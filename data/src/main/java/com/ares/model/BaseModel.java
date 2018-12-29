@@ -2,6 +2,7 @@ package com.ares.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -11,7 +12,9 @@ import java.util.Date;
  * @date 2018/10/17
  */
 @Data
-public class BaseModel {
+public class BaseModel implements Serializable {
+
+    public static final long serialVersionUID = 1L;
 
     private Date modified;
 

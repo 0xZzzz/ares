@@ -1,6 +1,6 @@
 package com.ares.service.shelf.decorator;
 
-import com.ares.domain.ShelfDisplayContext;
+import com.ares.model.ShelfDisplayContext;
 
 /**
  * 货架陈列规则（按净含量排序）

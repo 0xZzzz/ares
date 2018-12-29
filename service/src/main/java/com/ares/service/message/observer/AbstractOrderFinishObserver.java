@@ -1,7 +1,7 @@
 package com.ares.service.message.observer;
 
 import com.ares.common.utils.Alarm;
-import com.ares.domain.Order;
+import com.ares.model.Order;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

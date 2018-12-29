@@ -1,8 +1,8 @@
 package com.ares.service.message.handler.order;
 
 import com.ares.common.exception.SystemException;
-import com.ares.domain.Order;
-import com.ares.domain.OrderMessage;
+import com.ares.model.Order;
+import com.ares.model.OrderMessage;
 import com.ares.enums.OrderStatusEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

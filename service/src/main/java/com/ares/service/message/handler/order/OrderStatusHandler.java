@@ -1,7 +1,7 @@
 package com.ares.service.message.handler.order;
 
-import com.ares.domain.Order;
-import com.ares.domain.OrderMessage;
+import com.ares.model.Order;
+import com.ares.model.OrderMessage;
 
 /**
  * 订单状态处理

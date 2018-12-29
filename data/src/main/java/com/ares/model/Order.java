@@ -1,4 +1,4 @@
-package com.ares.domain;
+package com.ares.model;
 
 import lombok.Data;
 
@@ -9,7 +9,7 @@ import lombok.Data;
  * @date 2018/10/16
  */
 @Data
-public class Order extends BaseDomain {
+public class Order extends BaseModel {
 
     private Long orderId;
 

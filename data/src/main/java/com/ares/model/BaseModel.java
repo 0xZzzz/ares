@@ -1,7 +1,6 @@
-package com.ares.domain;
+package com.ares.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.Date;
 
@@ -11,18 +10,13 @@ import java.util.Date;
  * @author 0xZzzz
  * @date 2018/10/17
  */
-public class BaseDomain {
+@Data
+public class BaseModel {
 
-    @Getter
-    @Setter
     private Date modified;
 
-    @Getter
-    @Setter
     private Date created;
 
-    @Getter
-    @Setter
     private Long id;
 
 }

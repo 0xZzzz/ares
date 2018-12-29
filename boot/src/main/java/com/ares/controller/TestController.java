@@ -2,7 +2,7 @@ package com.ares.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.ares.common.utils.RocketMQUtils;
-import com.ares.domain.OrderMessage;
+import com.ares.model.OrderMessage;
 import com.ares.enums.OrderTypeEnum;
 import com.ares.enums.PaymentTypeEnum;
 import com.ares.service.test.TestService;

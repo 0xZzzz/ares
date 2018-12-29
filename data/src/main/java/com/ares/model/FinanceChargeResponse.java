@@ -1,4 +1,4 @@
-package com.ares.domain;
+package com.ares.model;
 
 /**
  * 计费结算响应

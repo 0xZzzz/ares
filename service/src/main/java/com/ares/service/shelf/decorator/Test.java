@@ -1,7 +1,7 @@
 package com.ares.service.shelf.decorator;
 
-import com.ares.domain.Item;
-import com.ares.domain.ShelfDisplayContext;
+import com.ares.model.Item;
+import com.ares.model.ShelfDisplayContext;
 import com.google.common.collect.Lists;
 
 /**

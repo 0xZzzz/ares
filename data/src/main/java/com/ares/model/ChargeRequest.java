@@ -1,4 +1,4 @@
-package com.ares.domain;
+package com.ares.model;
 
 import lombok.Data;
 

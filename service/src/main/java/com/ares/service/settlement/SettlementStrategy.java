@@ -1,6 +1,6 @@
 package com.ares.service.settlement;
 
-import com.ares.domain.ChargeRequest;
+import com.ares.model.ChargeRequest;
 
 /**
  * 计费结算

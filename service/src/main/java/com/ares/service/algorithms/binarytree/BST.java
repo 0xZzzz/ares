@@ -1,7 +1,5 @@
 package com.ares.service.algorithms.binarytree;
 
-import lombok.Data;
-
 import java.util.Stack;
 
 /**
@@ -122,6 +120,75 @@ public class BST {
         }
     }
 
+    public void printLeaves() {
+        printLeaves(root);
+    }
+
+    /**
+     * 递归打印叶子结点
+     */
+    private void printLeaves(Node node) {
+        if (node == null) {
+            return;
+        }
+        if (node.isLeaf()) {
+            System.out.printf("%s ", node.data);
+        }
+        printLeaves(node.left);
+        printLeaves(node.right);
+    }
+
+    public int countLeaves() {
+        return countLeaves(root);
+    }
+
+    /**
+     * 递归计算叶子结点的数量
+     */
+    private int countLeaves(Node node) {
+        return node == null ? 0 : node.isLeaf() ? 1 : countLeaves(node.left) + countLeaves(node.right);
+    }
+
+    public int countLeafNodes() {
+        if (root == null) {
+            return 0;
+        }
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        int count = 0;
+        while (!stack.isEmpty()) {
+            Node node = stack.pop();
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.isLeaf()) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * 是否包含
+     */
+    public boolean contains(int value) {
+        Node current = root;
+        while (current != null) {
+            if (current.data == value) {
+                return true;
+            }
+            if (current.data > value) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+        }
+        return false;
+    }
+
     /**
      * 遍历方式
      */
@@ -134,7 +201,6 @@ public class BST {
         POST
     }
 
-    @Data
     private static class Node {
 
         private int data;
@@ -165,6 +231,13 @@ public class BST {
                     this.right.addNode(data);
                 }
             }
+        }
+
+        /**
+         * 是否是叶子结点
+         */
+        private boolean isLeaf() {
+            return left == null && right == null;
         }
     }
 

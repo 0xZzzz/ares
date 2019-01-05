@@ -22,6 +22,13 @@ public class BSTTest {
         tree.postOrder();
         System.out.println();
         tree.preOrder();
+        System.out.println();
+
+        tree.printLeaves();
+        System.out.println();
+        System.out.println(tree.countLeaves());
+
+        System.out.println(tree.contains(100));
     }
 
 }

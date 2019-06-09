@@ -1,8 +1,6 @@
 package com.ares.service.message.listener;
 
 import com.ares.common.exception.BusinessException;
-import com.ares.common.exception.SystemException;
-import com.ares.common.utils.Alarm;
 import com.ares.service.message.handler.MessageHandler;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
@@ -28,23 +26,19 @@ public class CommonMessageListener implements MessageListenerConcurrently {
     private MessageHandler messageHandler;
 
     @Override
-    public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
-        Alarm.start();
+    public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list,
+                                                    ConsumeConcurrentlyContext consumeConcurrentlyContext) {
         try {
             if (isLogMessage) {
                 logger.info("message: {}", list);
             }
-            messageHandler.handle(list);
             return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
         } catch (BusinessException e) {
             logger.error("biz error!", e);
             return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
         } catch (Exception e) {
             logger.error("error!", e);
-            Alarm.error();
-            throw new SystemException(e);
-        } finally {
-            Alarm.end();
+            return ConsumeConcurrentlyStatus.RECONSUME_LATER;
         }
     }
 

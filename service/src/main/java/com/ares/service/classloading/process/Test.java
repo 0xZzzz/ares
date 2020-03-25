@@ -1,9 +1,21 @@
 package com.ares.service.classloading.process;
 
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang3.StringUtils;
+
 public class Test {
 
     public static void main(String[] args) {
-        C1.staticInvoke();
+        String str = "";
+        String[] arr1 = str.split(",\\s");
+        JSONObject json = new JSONObject();
+        for (String str1 : arr1) {
+            String[] arr2 = StringUtils.split(str1, "=");
+            if (arr2.length == 2) {
+                json.put(arr2[0], arr2[1]);
+            }
+        }
+        System.out.println("[" + json.toJSONString() + "]");
     }
 
 }

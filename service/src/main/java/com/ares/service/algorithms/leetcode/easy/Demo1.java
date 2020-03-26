@@ -21,6 +21,10 @@ public class Demo1 {
         algorithms(board);
     }
 
+    /**
+     * 时间复杂度 O(n^2)
+     * 空间复杂度 O(1)
+     */
     private static void algorithms(String[][] board) {
         // 首先找到 R 的坐标
         int rx = -1, ry = -1;

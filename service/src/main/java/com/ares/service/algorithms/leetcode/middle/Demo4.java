@@ -18,7 +18,7 @@ public class Demo4 {
         algorithms(input);
     }
     /**
-     * 时间复杂度 O(n^2)
+     * 时间复杂度 O(m*n)
      * 空间复杂度 算上结果数组 O(n) 不算结果数组 O(1)
      */
     private static void algorithms(int[][] input) {

@@ -49,15 +49,18 @@ public class Demo8 {
         }
 
         List<StringBuilder> rows = new ArrayList<>();
+        // 初始化每行的字符串
         for (int i = 0; i < Math.min(numRows, s.length()); i++) {
             rows.add(new StringBuilder());
         }
 
         int curRow = 0;
+        // 行数的方向，向上 or 向下
         boolean goingDown = false;
 
         for (char c : s.toCharArray()) {
             rows.get(curRow).append(c);
+            // 当行数是第一行或者最后一行时，下一行的方向就要向反方向移动了
             if (curRow == 0 || curRow == numRows - 1) {
                 goingDown = !goingDown;
             }

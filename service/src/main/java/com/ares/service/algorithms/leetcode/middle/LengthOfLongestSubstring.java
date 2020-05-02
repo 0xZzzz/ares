@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * leetcode 3
+ *
  * 给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。
  *
  * 示例 1:
@@ -30,7 +32,7 @@ import java.util.Set;
  * @author fansheng
  * @date 2020/3/30
  */
-public class Demo2 {
+public class LengthOfLongestSubstring {
 
     public static void main(String[] args) {
         algorithms1("abcabcbb");

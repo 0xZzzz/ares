@@ -11,6 +11,9 @@ public class MinimumSubSequenceDemo {
     public static void main(String[] args) {
         int[] arr = {-12, 11, -4, 13, -5, -8};
         System.out.println(m3(arr, 0, arr.length - 1));
+
+        int[] arr2 = {-12, -11};
+        m2(arr2);
     }
 
     /**

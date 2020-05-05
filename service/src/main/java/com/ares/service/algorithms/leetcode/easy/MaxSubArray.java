@@ -18,6 +18,8 @@ public class MaxSubArray {
     public static void main(String[] args) {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         System.out.println(solution1(nums));
+        System.out.println(solution2(nums));
+        System.out.println(solution3(nums));
     }
 
     /**
@@ -27,7 +29,7 @@ public class MaxSubArray {
      * 空间复杂度：O(1)
      */
     private static int solution1(int[] nums) {
-        int maxSum = Integer.MIN_VALUE;
+        int maxSum = nums[0];
         for (int i = 0; i < nums.length; i++) {
             int innerSum = nums[i];
             if (innerSum > maxSum) {
@@ -43,9 +45,49 @@ public class MaxSubArray {
         return maxSum;
     }
 
+    /**
+     * 原理：负数或者和为负数的序列不定不能成为最大子序列的左前缀
+     *
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     */
     private static int solution2(int[] nums) {
-        int maxSum = Integer.MIN_VALUE;
+        int maxSum = nums[0];
+        int pre = 0;
+        for (int x : nums) {
+            pre = Math.max(pre + x, x);
+            maxSum = Math.max(pre, maxSum);
+        }
         return maxSum;
+    }
+
+    /**
+     * 动态规划，遍历数组，只要数组中当前元素的前一个元素的值大于0，就将前一个元素的值累加到当前元素上
+     * 最后找出修改后的数组中的最大值，即为数组中最大子序列的和
+     *
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     */
+    private static int solution3(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i - 1] > 0) {
+                nums[i] += nums[i - 1];
+            }
+        }
+        int maxSum = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > maxSum) {
+                maxSum = nums[i];
+            }
+        }
+        return maxSum;
+    }
+
+    /**
+     * 分治法：
+     */
+    public static int solution4(int[] nums) {
+        return 0;
     }
 
 }

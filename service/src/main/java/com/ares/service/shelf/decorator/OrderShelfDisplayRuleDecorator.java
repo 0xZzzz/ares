@@ -1,6 +1,8 @@
 package com.ares.service.shelf.decorator;
 
-import com.ares.model.ShelfDisplayContext;
+import com.ares.model.Item;
+
+import java.util.List;
 
 /**
  * 货架陈列规则（按净含量排序）
@@ -15,11 +17,11 @@ public class OrderShelfDisplayRuleDecorator extends AbstractShelfDisplayRuleDeco
     }
 
     @Override
-    public void execute(ShelfDisplayContext ctx) {
-        super.execute(ctx);
-        ctx.getDisplayItemList().forEach(
+    public List<List<Item>> execute(List<Item> selectedItems) {
+        List<List<Item>> displayItems = super.execute(selectedItems);
+        displayItems.forEach(
             itemList -> itemList.sort((o1, o2) -> o1.getNetWeight().equals(o2.getNetWeight()) ? 0
                 : o1.getNetWeight() > o2.getNetWeight() ? 1 : -1));
+        return displayItems;
     }
-
 }

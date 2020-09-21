@@ -1,7 +1,6 @@
 package com.ares.service.shelf.decorator;
 
 import com.ares.model.Item;
-import com.ares.model.ShelfDisplayContext;
 import com.google.common.collect.Lists;
 
 import java.util.List;
@@ -21,19 +20,19 @@ public class CopyShelfDisplayRuleDecorator extends AbstractShelfDisplayRuleDecor
     }
 
     @Override
-    public void execute(ShelfDisplayContext ctx) {
-        super.execute(ctx);
-        List<List<Item>> displayItemList = Lists.newArrayList();
-        ctx.getDisplayItemList().forEach(itemList -> {
-            List<Item> rowItemList = Lists.newArrayList();
+    public List<List<Item>> execute(List<Item> selectedItems) {
+        List<List<Item>> displayItems = super.execute(selectedItems);
+        List<List<Item>> copiedDisplayItems = Lists.newArrayList();
+        displayItems.forEach(itemList -> {
+            List<Item> rowItems = Lists.newArrayList();
             itemList.forEach(item -> {
                 for (int i = 0; i < COPY_ITEM_NUM; i++) {
-                    rowItemList.add(item);
+                    rowItems.add(item);
                 }
             });
-            displayItemList.add(rowItemList);
+            copiedDisplayItems.add(rowItems);
         });
-        ctx.setDisplayItemList(displayItemList);
+        return copiedDisplayItems;
     }
 
 }

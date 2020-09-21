@@ -1,6 +1,8 @@
 package com.ares.service.shelf.decorator;
 
-import com.ares.model.ShelfDisplayContext;
+import com.ares.model.Item;
+
+import java.util.List;
 
 /**
  * 货架陈列规则装饰者抽象类
@@ -17,7 +19,7 @@ public abstract class AbstractShelfDisplayRuleDecorator implements ShelfDisplayR
     }
 
     @Override
-    public void execute(ShelfDisplayContext ctx) {
-        rule.execute(ctx);
+    public List<List<Item>> execute(List<Item> selectedItems) {
+        return rule.execute(selectedItems);
     }
 }

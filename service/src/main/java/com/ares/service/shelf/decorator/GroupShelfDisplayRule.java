@@ -1,7 +1,6 @@
 package com.ares.service.shelf.decorator;
 
 import com.ares.model.Item;
-import com.ares.model.ShelfDisplayContext;
 import com.google.common.collect.Lists;
 
 import java.util.List;
@@ -17,12 +16,11 @@ import java.util.stream.Collectors;
 public class GroupShelfDisplayRule implements ShelfDisplayRule {
 
     @Override
-    public void execute(ShelfDisplayContext ctx) {
-        Map<Long, List<Item>> brandGroup =
-            ctx.getSelectItemList().stream().collect(Collectors.groupingBy(Item::getBrandId));
-        List<List<Item>> displayItemList = Lists.newArrayList();
-        brandGroup.forEach((brandId, itemGroupList) -> displayItemList.add(itemGroupList));
-        ctx.setDisplayItemList(displayItemList);
+    public List<List<Item>> execute(List<Item> selectedItems) {
+        Map<Long, List<Item>> brandGroup = selectedItems.stream().collect(Collectors.groupingBy(Item::getBrandId));
+        List<List<Item>> displayItems = Lists.newArrayList();
+        brandGroup.forEach((brandId, itemGroupList) -> displayItems.add(itemGroupList));
+        return displayItems;
     }
 
 }

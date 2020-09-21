@@ -1,6 +1,8 @@
 package com.ares.service.shelf.decorator;
 
-import com.ares.model.ShelfDisplayContext;
+import com.ares.model.Item;
+
+import java.util.List;
 
 /**
  * 货架陈列规则
@@ -13,8 +15,9 @@ public interface ShelfDisplayRule {
     /**
      * 执行规则
      *
-     * @param ctx 货架陈列上下文
+     * @param selectedItems 选品列表
+     * @return 规则执行后的商品陈列列表
      */
-    void execute(ShelfDisplayContext ctx);
+    List<List<Item>> execute(List<Item> selectedItems);
 
 }

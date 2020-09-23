@@ -18,6 +18,7 @@ public class DecoratorTest {
 
     public static void main(String[] args) {
         List<String> commands = Lists.newArrayList(args);
+        // 选品列表
         List<Item> selectedItems = Lists.newArrayList(
             new Item("康师傅1L", 3L, 1L),
             new Item("娃哈哈2L", 2L, 2L),
@@ -25,7 +26,7 @@ public class DecoratorTest {
             new Item("今麦郎1L", 1L, 1L),
             new Item("玩哈哈1L", 2L, 1L),
             new Item("今麦郎2L", 1L, 2L));
-        System.out.println();
+        // 根据命令确定陈列规则
         ShelfDisplayRule rule = new GroupShelfDisplayRule();
         if (commands.contains(ORDER_CMD)) {
             rule = new OrderShelfDisplayRuleDecorator(rule);
@@ -33,7 +34,9 @@ public class DecoratorTest {
         if (commands.contains(COPY_CMD)) {
             rule = new CopyShelfDisplayRuleDecorator(rule);
         }
+        // 执行陈列规则
         List<List<Item>> displayItems = rule.execute(selectedItems);
+        // 打印陈列结果
         displayItems.forEach(itemList -> {
             StringBuilder printString = new StringBuilder();
             itemList.forEach(item -> printString.append(item.getName()).append("  "));

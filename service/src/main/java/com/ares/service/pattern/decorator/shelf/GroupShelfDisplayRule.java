@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * 货架陈列规则（按品牌分组）
  *
- * @author 0xzzzz
+ * @author 0xZzzz
  * @date 2018/10/18
  */
 public class GroupShelfDisplayRule implements ShelfDisplayRule {

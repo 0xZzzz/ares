@@ -12,7 +12,7 @@ import java.util.List;
  */
 public abstract class AbstractShelfDisplayRuleDecorator implements ShelfDisplayRule {
 
-    private ShelfDisplayRule rule;
+    private final ShelfDisplayRule rule;
 
     public AbstractShelfDisplayRuleDecorator(ShelfDisplayRule rule) {
         this.rule = rule;

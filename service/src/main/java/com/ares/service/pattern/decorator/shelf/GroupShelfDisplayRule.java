@@ -1,4 +1,4 @@
-package com.ares.service.shelf.decorator;
+package com.ares.service.pattern.decorator.shelf;
 
 import com.ares.model.Item;
 import com.google.common.collect.Lists;

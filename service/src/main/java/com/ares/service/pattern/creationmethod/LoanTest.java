@@ -1,4 +1,4 @@
-package com.ares.service.pattern.creation.method;
+package com.ares.service.pattern.creationmethod;
 
 import java.math.BigDecimal;
 import java.util.Date;

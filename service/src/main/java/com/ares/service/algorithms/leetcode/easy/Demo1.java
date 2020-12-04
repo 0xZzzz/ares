@@ -55,8 +55,8 @@ package com.ares.service.algorithms.leetcode.easy;
  *
  * 提示：
  * board.length == board[i].length == 8
- * board[i][j] 可以是 'R'，'.'，'B' 或 'p'
- * 只有一个格子上存在 board[i][j] == 'R'
+ * board[i][j] 可以是 'R'，'.'，'B' 或 'p'
+ * 只有一个格子上存在 board[i][j] == 'R'
  *
  * @author fansheng
  * @date 2020/3/26

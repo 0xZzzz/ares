@@ -203,7 +203,7 @@ public class BST {
 
     private static class Node {
 
-        private int data;
+        private final int data;
 
         private Node left, right;
 

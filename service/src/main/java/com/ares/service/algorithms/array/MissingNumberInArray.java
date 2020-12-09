@@ -1,7 +1,13 @@
 package com.ares.service.algorithms.array;
 
+import com.google.common.collect.Lists;
+import org.apache.commons.lang3.ArrayUtils;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.BitSet;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 在int数组中寻找丢失的元素
@@ -22,7 +28,7 @@ public class MissingNumberInArray {
         printMissingNumber(new int[] {1, 2, 3, 4, 6, 9, 8}, 10);
 
         // 丢失四个元素
-        printMissingNumber(new int[] {1, 2, 3, 4, 9, 8}, 10);
+        printMissingNumber2(new int[] {1, 2, 3, 4, 9, 8}, 10);
 
         // 仅仅一个丢失元素
         int[] iArray = new int[] {1, 2, 3, 5};
@@ -52,6 +58,18 @@ public class MissingNumberInArray {
             System.out.println(++lastMissingIndex);
         }
 
+    }
+
+    private static void printMissingNumber2(int[] numbers, int count) {
+        System.out.printf("Missing numbers in integer array %s, with total number %d is %n",
+                Arrays.toString(numbers), count);
+        List<Integer> list = Lists.newArrayList();
+        Arrays.stream(numbers).forEach(list::add);
+        for (int i = 1; i <= count; i++) {
+            if (!list.contains(i)) {
+                System.out.println(i);
+            }
+        }
     }
 
     /**

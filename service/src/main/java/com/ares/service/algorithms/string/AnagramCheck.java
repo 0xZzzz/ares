@@ -25,7 +25,7 @@ public class AnagramCheck {
             if (index == -1) {
                 return false;
             }
-            anagram = anagram.substring(0, index) + anagram.substring(index + 1, anagram.length());
+            anagram = anagram.substring(0, index) + anagram.substring(index + 1);
         }
         return anagram.isEmpty();
     }

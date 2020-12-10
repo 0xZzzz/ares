@@ -5,7 +5,7 @@ import lombok.ToString;
 /**
  * 商品 HU
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/11/12
  */
 @ToString(callSuper = true)

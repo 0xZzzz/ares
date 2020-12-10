@@ -12,7 +12,7 @@ package com.ares.service.algorithms.leetcode.middle;
  * 输入: "cbbd"
  * 输出: "bb"
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/4/7
  */
 public class Demo5 {

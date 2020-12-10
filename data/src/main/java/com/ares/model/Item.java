@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 商品
  *
- * @author fansheng
+ * @author  0xZzzz
  */
 @Data
 public class Item {

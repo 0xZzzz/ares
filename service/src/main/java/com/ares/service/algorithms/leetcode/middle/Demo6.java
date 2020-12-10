@@ -39,7 +39,7 @@ import java.util.Arrays;
  *   [16, 7,10,11]
  * ]
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/4/7
  */
 public class Demo6 {

@@ -37,7 +37,7 @@ package com.ares.service.algorithms.leetcode.easy;
  *  1   2
  * 返回 false。
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/5/7
  */
 public class IsSubTree {

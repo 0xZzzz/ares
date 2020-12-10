@@ -42,7 +42,7 @@ import java.util.Map;
  * 1 <= deck.length <= 10000
  * 0 <= deck[i] < 10000
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/3/27
  */
 public class Demo3 {

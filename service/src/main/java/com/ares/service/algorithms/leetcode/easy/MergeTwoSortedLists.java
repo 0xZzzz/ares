@@ -9,7 +9,7 @@ package com.ares.service.algorithms.leetcode.easy;
  * 输入：1->2->4, 1->3->4
  * 输出：1->1->2->3->4->4
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/5/1
  */
 public class MergeTwoSortedLists {

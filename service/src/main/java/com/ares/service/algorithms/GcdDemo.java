@@ -3,7 +3,7 @@ package com.ares.service.algorithms;
 /**
  * 求两个数的最大公因数，GCD(greatest common divisor)
  *
- * @author fansheng
+ * @author  0xZzzz
  * @since 2019/11/4
  */
 public class GcdDemo {

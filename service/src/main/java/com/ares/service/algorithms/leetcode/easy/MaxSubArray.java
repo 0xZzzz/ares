@@ -10,7 +10,7 @@ package com.ares.service.algorithms.leetcode.easy;
  * 输出: 6
  * 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/5/3
  */
 public class MaxSubArray {

@@ -31,7 +31,7 @@ import java.util.Arrays;
  *   [0,1,0]
  * ]
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/4/2
  */
 public class Demo4 {

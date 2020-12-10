@@ -32,7 +32,7 @@ import java.util.Arrays;
  * 按此输出 A = "()()", B = "()()", max(depth(A), depth(B)) = 1，它们的深度最小。
  * 像 [1,1,1,0,0,1,1,1]，也是正确结果，其中 A = "()()()", B = "()", max(depth(A), depth(B)) = 1 。
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/4/1
  */
 public class Demo3 {

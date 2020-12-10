@@ -3,7 +3,7 @@ package com.ares.service.algorithms;
 /**
  * 判断长方形是否有交集
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/3/25
  */
 public class RectangleIntersecting {

@@ -11,7 +11,7 @@ package com.ares.service.algorithms.leetcode.middle;
  * 输出：7 -> 0 -> 8
  * 原因：342 + 465 = 807
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/3/26
  */
 public class Demo1 {

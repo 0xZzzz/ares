@@ -58,7 +58,7 @@ package com.ares.service.algorithms.leetcode.easy;
  * board[i][j] 可以是 'R'，'.'，'B' 或 'p'
  * 只有一个格子上存在 board[i][j] == 'R'
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/3/26
  */
 public class Demo1 {

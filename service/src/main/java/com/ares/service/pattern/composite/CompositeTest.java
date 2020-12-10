@@ -3,7 +3,7 @@ package com.ares.service.pattern.composite;
 /**
  * composite test class
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/11/12
  */
 public class CompositeTest {

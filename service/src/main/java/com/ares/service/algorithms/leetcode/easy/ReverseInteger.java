@@ -18,7 +18,7 @@ package com.ares.service.algorithms.leetcode.easy;
  *
  * 假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/4/19
  */
 public class ReverseInteger {

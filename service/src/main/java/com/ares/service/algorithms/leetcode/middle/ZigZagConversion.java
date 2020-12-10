@@ -20,7 +20,7 @@ import java.util.List;
  * <p>
  * L     D     R E   O E   I I E C   I H   N T     S     G
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/4/12
  */
 public class ZigZagConversion {

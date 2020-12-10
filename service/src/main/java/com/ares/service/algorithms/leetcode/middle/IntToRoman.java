@@ -42,7 +42,7 @@ package com.ares.service.algorithms.leetcode.middle;
  * 输出: "MCMXCIV"
  * 解释: M = 1000, CM = 900, XC = 90, IV = 4.
  *
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/12/7
  */
 public class IntToRoman {

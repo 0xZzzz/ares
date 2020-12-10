@@ -1,7 +1,7 @@
 package com.ares.service.algorithms.leetcode.middle;
 
 /**
- * @author fansheng
+ * @author  0xZzzz
  * @date 2020/4/8
  */
 public class Demo7 {

@@ -3,7 +3,7 @@ package com.ares.service.algorithms.array;
 /**
  * 最小子序列问题
  *
- * @author fansheng
+ * @author  0xZzzz
  * @since 2019/11/1
  */
 public class MinimumSubSequenceDemo {

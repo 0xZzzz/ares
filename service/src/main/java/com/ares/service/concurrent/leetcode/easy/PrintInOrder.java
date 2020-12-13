@@ -40,7 +40,6 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class PrintInOrder {
 
-
     public static void main(String[] args) {
         int[] cmds = new int[]{1, 2, 3};
         Foo foo = new Foo();

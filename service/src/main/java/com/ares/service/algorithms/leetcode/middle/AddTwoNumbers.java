@@ -1,9 +1,10 @@
 package com.ares.service.algorithms.leetcode.middle;
 
 /**
+ * https://leetcode-cn.com/problems/add-two-numbers/
  * 给出两个非空的链表用来表示两个非负的整数。其中，它们各自的位数是按照逆序的方式存储的，并且它们的每个节点只能存储一位数字。
  * 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
- * 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
+ * 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
  *
  * 示例：
  *
@@ -14,7 +15,7 @@ package com.ares.service.algorithms.leetcode.middle;
  * @author  0xZzzz
  * @date 2020/3/26
  */
-public class Demo1 {
+public class AddTwoNumbers {
 
     public static void main(String[] args) {
         ListNode l1 = new ListNode(2);
@@ -80,7 +81,7 @@ public class Demo1 {
             StringBuilder str = new StringBuilder(String.valueOf(val)).append(" ");
             ListNode n = next;
             while (n != null) {
-                str.append(String.valueOf(n.val)).append(" ");
+                str.append(n.val).append(" ");
                 n = n.next;
             }
             System.out.println(str.toString());

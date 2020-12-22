@@ -14,9 +14,9 @@ import java.util.List;
  * <p>
  * string convert(string s, int numRows);
  * <p>
- * 示例 1: 输入: s = "LEETCODEISHIRING", numRows = 3 输出: "LCIRETOESIIGEDHN"
+ * 示例 1: 输入: s = "LEETCODEISHIRING", numRows = 3 输出: "LCIRETOESIIGEDHN"
  * <p>
- * 示例 2: 输入: s = "LEETCODEISHIRING", numRows = 4 输出: "LDREOEIIECIHNTSG" 解释:
+ * 示例 2: 输入: s = "LEETCODEISHIRING", numRows = 4 输出: "LDREOEIIECIHNTSG" 解释:
  * <p>
  * L     D     R E   O E   I I E C   I H   N T     S     G
  *

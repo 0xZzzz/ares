@@ -9,9 +9,9 @@ import java.util.Map;
  *
  * 此时，你需要选定一个数字 X，使我们可以将整副牌按下述规则分成 1 组或更多组：
  *
- * 每组都有 X 张牌。
+ * 每组都有 X 张牌。
  * 组内所有的牌上都写着相同的整数。
- * 仅当你可选的 X >= 2 时返回 true。
+ * 仅当你可选的 X >= 2 时返回 true。
  *
  * 示例 1：
  * 输入：[1,2,3,4,4,3,2,1]
@@ -40,7 +40,7 @@ import java.util.Map;
  *
  * 提示：
  * 1 <= deck.length <= 10000
- * 0 <= deck[i] < 10000
+ * 0 <= deck[i] < 10000
  *
  * @author  0xZzzz
  * @date 2020/3/27
@@ -59,7 +59,7 @@ public class Demo3 {
     private static void algorithms1(int[] deck) {
         Map<Integer, Integer> map = Maps.newHashMap();
         for (int i : deck) {
-            map.merge(i, 1, (i1, i2) -> i1 + i2);
+            map.merge(i, 1, Integer::sum);
         }
         int x = -1;
         for (Integer size : map.values()) {

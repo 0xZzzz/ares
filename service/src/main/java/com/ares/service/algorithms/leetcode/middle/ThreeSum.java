@@ -61,7 +61,7 @@ public class ThreeSum {
                     break;
                 }
                 if (nums[second] + nums[third] == target) {
-                    List<Integer> list = new ArrayList<Integer>();
+                    List<Integer> list = new ArrayList<>();
                     list.add(nums[first]);
                     list.add(nums[second]);
                     list.add(nums[third]);

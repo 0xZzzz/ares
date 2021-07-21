@@ -25,7 +25,7 @@ package com.ares.service.algorithms.leetcode.easy;
 public class ReverseInteger {
 
     public static void main(String[] args) {
-        System.out.println(reverse(-321));
+        System.out.println(reverse(Integer.MIN_VALUE));
     }
 
     /**
@@ -33,9 +33,6 @@ public class ReverseInteger {
      * 空间复杂度：O(1)
      */
     private static int reverse(int x) {
-        if (x == Integer.MIN_VALUE) {
-            return 0;
-        }
         // 标记是否为负数
         int neg = x < 0 ? -1 : 1;
         // 把输入的数值转换为正数
@@ -43,8 +40,7 @@ public class ReverseInteger {
         int ret = 0;
         while (x > 0) {
             int n = ret;
-            n *= 10;
-            n += x % 10;
+            n = n * 10 + x % 10;
             x /= 10;
             // 这里判断是否溢出，没有溢出这个等式一定是成立的，只有溢出之后这个等式才会不成立
             if (n / 10 != ret) {

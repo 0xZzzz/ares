@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 /**
- * {@link com.ares.service.algorithms.leetcode.easy.TwoSum} test
+ * {@link com.ares.service.algorithms.leetcode.easy.TwoSum} practice
  *
  * @author fansheng
  * @date 2021/7/21
@@ -21,7 +21,7 @@ public class TwoSumPractice {
      * 时间 O(N)
      * 空间 O(N)
      */
-    public static void twoSum(int[] nums, int target) {
+    private static void twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = Maps.newHashMap();
         for (int i = 0; i < nums.length; i++) {
             int n = nums[i];

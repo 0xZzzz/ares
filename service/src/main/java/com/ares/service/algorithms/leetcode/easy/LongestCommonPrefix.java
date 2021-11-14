@@ -4,8 +4,8 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
+ * 14. 最长公共前缀
  * https://leetcode-cn.com/problems/longest-common-prefix/
- * 最长公共前缀
  * <p>
  * 编写一个函数来查找字符串数组中的最长公共前缀。
  * <p>

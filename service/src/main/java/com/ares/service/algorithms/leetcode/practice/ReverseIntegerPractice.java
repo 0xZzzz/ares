@@ -1,7 +1,9 @@
 package com.ares.service.algorithms.leetcode.practice;
 
+import com.ares.service.algorithms.leetcode.middle.ReverseInteger;
+
 /**
- * {@link com.ares.service.algorithms.leetcode.easy.ReverseInteger} practice
+ * {@link ReverseInteger} practice
  *
  * @author fansheng
  * @date 2021/7/21

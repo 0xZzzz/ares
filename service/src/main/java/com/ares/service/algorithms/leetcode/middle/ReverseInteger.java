@@ -1,7 +1,9 @@
-package com.ares.service.algorithms.leetcode.easy;
+package com.ares.service.algorithms.leetcode.middle;
 
 /**
- * 7
+ * 7. 整数反转
+ * https://leetcode.cn/problems/reverse-integer/
+ *
  * 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
  *
  * 示例 1:

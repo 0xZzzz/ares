@@ -137,4 +137,22 @@ public class LengthOfLongestSubstring {
         System.out.println(ans);
     }
 
+    /**
+     * 自己写的，和最后一个思路差不多
+     */
+    private static void self(String input) {
+        String result = "";
+        StringBuilder current = new StringBuilder();
+        for (char c : input.toCharArray()) {
+            String s = String.valueOf(c);
+            if (current.indexOf(s) < 0) {
+                current.append(s);
+            } else if (current.length() > result.length()) {
+                result = current.toString();
+                current = new StringBuilder(s);
+            }
+        }
+        System.out.println(result);
+    }
+
 }

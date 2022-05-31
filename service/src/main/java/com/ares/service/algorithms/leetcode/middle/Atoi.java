@@ -67,4 +67,51 @@ package com.ares.service.algorithms.leetcode.middle;
  * @date 2022/5/31
  */
 public class Atoi {
+
+    public static void main(String[] args) {
+        self("-42");
+        self("42");
+        self("4396 aaa bbb");
+        self("    4396 aaa bbb");
+        self("  a  4396 aaa bbb");
+    }
+
+    /**
+     * 时间复杂度 O(n)
+     * 空间复杂度 O(1)
+     */
+    private static void self(String s) {
+        boolean start = false;
+        int neg = 1;
+        int r = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == ' ') {
+                continue;
+            }
+            if (!start) {
+                start = true;
+                if ('-' == c || '+' == c) {
+                    neg = '-' == c ? -1 : 1;
+                    continue;
+                }
+                if (!Character.isDigit(c)) {
+                    break;
+                }
+                r = Integer.parseInt(String.valueOf(c));
+            } else {
+                if (!Character.isDigit(c)) {
+                    break;
+                }
+                int ans = r * 10 + Integer.parseInt(String.valueOf(c));
+                if (ans / 10 != r) {
+                    r = neg < 0 ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+                    break;
+                }
+                r = ans;
+            }
+        }
+        System.out.println(r * neg);
+    }
+
 }

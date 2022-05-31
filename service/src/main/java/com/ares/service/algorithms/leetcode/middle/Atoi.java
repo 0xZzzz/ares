@@ -98,12 +98,12 @@ public class Atoi {
                 if (!Character.isDigit(c)) {
                     break;
                 }
-                r = Integer.parseInt(String.valueOf(c));
+                r = Character.getNumericValue(c);
             } else {
                 if (!Character.isDigit(c)) {
                     break;
                 }
-                int ans = r * 10 + Integer.parseInt(String.valueOf(c));
+                int ans = r * 10 + Character.getNumericValue(c);
                 if (ans / 10 != r) {
                     r = neg < 0 ? Integer.MIN_VALUE : Integer.MAX_VALUE;
                     break;

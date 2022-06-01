@@ -32,17 +32,18 @@ import java.util.Set;
 public class LengthOfLongestSubstring {
 
     public static void main(String[] args) {
-        algorithms1("abcabcbb");
-        algorithms1("bbbbb");
-        algorithms1("pwwkew");
-
-        algorithms2("abcabcbb");
-        algorithms2("bbbbb");
-        algorithms2("pwwkew");
-
-        algorithms3("abcabcbb");
-        algorithms3("bbbbb");
-        algorithms3("pwwkew");
+//        algorithms1("abcabcbb");
+//        algorithms1("bbbbb");
+//        algorithms1("pwwkew");
+//
+//        algorithms2("abcabcbb");
+//        algorithms2("bbbbb");
+//        algorithms2("pwwkew");
+//
+//        algorithms3("abcabcbb");
+//        algorithms3("bbbbb");
+//        algorithms3("pwwkew");
+        self("dvdf");
     }
 
     /**
@@ -138,21 +139,22 @@ public class LengthOfLongestSubstring {
     }
 
     /**
-     * 自己写的，和最后一个思路差不多
+     * 自己写的
      */
     private static void self(String input) {
         String result = "";
         StringBuilder current = new StringBuilder();
         for (char c : input.toCharArray()) {
             String s = String.valueOf(c);
-            if (current.indexOf(s) < 0) {
-                current.append(s);
-            } else if (current.length() > result.length()) {
+            if (current.indexOf(s) >= 0) {
+                current = new StringBuilder(current.substring(current.indexOf(s) + 1));
+            }
+            current.append(s);
+            if (current.length() > result.length()) {
                 result = current.toString();
-                current = new StringBuilder(s);
             }
         }
-        System.out.println(result);
+        System.out.println(result.length());
     }
 
 }

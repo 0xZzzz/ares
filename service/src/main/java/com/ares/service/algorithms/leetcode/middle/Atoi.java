@@ -73,7 +73,7 @@ public class Atoi {
         self("42");
         self("4396 aaa bbb");
         self("    4396 aaa bbb");
-        self("  a  4396 aaa bbb");
+        self("+0 123");
     }
 
     /**
@@ -86,10 +86,10 @@ public class Atoi {
         int r = 0;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (c == ' ') {
-                continue;
-            }
             if (!start) {
+                if (c == ' ') {
+                    continue;
+                }
                 start = true;
                 if ('-' == c || '+' == c) {
                     neg = '-' == c ? -1 : 1;

@@ -75,7 +75,7 @@ public class IntToRoman {
                 num %= value;
             }
         }
-        System.out.println(sb.toString());
+        System.out.println(sb);
     }
 
     /**
@@ -91,7 +91,7 @@ public class IntToRoman {
                 num -= value;
             }
         }
-        System.out.println(sb.toString());
+        System.out.println(sb);
     }
 
 }

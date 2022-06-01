@@ -71,7 +71,7 @@ public class ZigZagConversion {
         for (StringBuilder row : rows) {
             ret.append(row);
         }
-        System.out.println(ret.toString());
+        System.out.println(ret);
     }
 
     /**

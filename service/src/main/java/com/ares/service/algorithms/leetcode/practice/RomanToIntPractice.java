@@ -1,7 +1,9 @@
 package com.ares.service.algorithms.leetcode.practice;
 
+import com.ares.service.algorithms.leetcode.easy.RomanToInteger;
+
 /**
- * {@link com.ares.service.algorithms.leetcode.easy.RomanToInt} practice
+ * {@link RomanToInteger} practice
  *
  * @author fansheng
  * @date 2021/7/23

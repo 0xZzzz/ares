@@ -1,6 +1,9 @@
 package com.ares.service.algorithms.leetcode.middle;
 
 /**
+ * 12. 整数转罗马数字
+ * https://leetcode.cn/problems/integer-to-roman/
+ *
  * 罗马数字包含以下七种字符： I， V， X， L，C，D 和 M。
  * 字符          数值
  * I             1
@@ -45,7 +48,7 @@ package com.ares.service.algorithms.leetcode.middle;
  * @author  0xZzzz
  * @date 2020/12/7
  */
-public class IntToRoman {
+public class IntegerToRoman {
 
     private static final int[] VALUES = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
     private static final String[] SYMBOLS = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};

@@ -7,20 +7,24 @@ package com.ares.service.algorithms.leetcode.practice;
 public class Practice {
 
     public static void main(String[] args) {
-        System.out.println(isPalindrome(-121));
+        System.out.println(maxArea(new int[]{1, 5, 6, 2, 5, 4, 8, 3, 5}));
     }
 
-    public static boolean isPalindrome(int x) {
-        if (x < 0) {
-            return false;
+    public static int maxArea(int[] height) {
+        int maxArea = 0;
+        int i = 0;
+        int j = height.length - 1;
+        while (i < j) {
+            int ih = height[i];
+            int jh = height[j];
+            maxArea = Math.max(maxArea, (j - i) * Math.min(ih, jh));
+            if (ih < jh) {
+                i++;
+            } else {
+                j--;
+            }
         }
-        int t = x;
-        int r = 0;
-        while (t > 0) {
-            r = r * 10 + t % 10 ;
-            t /= 10;
-        }
-        return r == x;
+        return maxArea;
     }
 
 }

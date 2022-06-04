@@ -50,6 +50,10 @@ public class ContainerWithMostWater {
         int maxArea = 0, l = 0, r = height.length - 1;
         while (l < r) {
             maxArea = Math.max(maxArea, (r - l) * Math.min(height[l], height[r]));
+            /*
+             * 这里其实可以再加一个判断，如果两边指针的高度相等时，可以同时向内移动，因为对于这两个指针构成的面积来说，
+             * 无论哪边向内移动，都不可能再出现面积比当前面积更大的情况，高度是固定的，但是x轴的长度却在减小
+             */
             if (height[r] > height[l]) {
                 l++;
             } else {

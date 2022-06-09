@@ -1,5 +1,10 @@
 package com.ares.service.algorithms.leetcode.easy;
 
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+
 /**
  * 20. 有效的括号
  * https://leetcode.cn/problems/valid-parentheses/
@@ -41,7 +46,31 @@ package com.ares.service.algorithms.leetcode.easy;
 public class ValidParentheses {
 
     public static void main(String[] args) {
+        System.out.println(algorithms1("()[]{}"));
+    }
 
+    private static boolean algorithms1(String str) {
+        if (str.length() % 2 != 0) {
+            return false;
+        }
+        Map<Character, Character> pairs = new HashMap<Character, Character>() {
+            {
+                put('}', '{');
+                put(']', '[');
+                put(')', '(');
+            }
+        };
+        Deque<Character> stack = new LinkedList<>();
+        for (char c : str.toCharArray()) {
+            if (pairs.containsKey(c)) {
+                if (stack.isEmpty() || stack.pop() != pairs.get(c)) {
+                    return false;
+                }
+            } else {
+                stack.push(c);
+            }
+        }
+        return stack.isEmpty();
     }
 
 }

@@ -23,7 +23,7 @@ public class ArrayReverse {
         if (array == null) {
             return;
         }
-        int i = startIndexInclusive < 0 ? 0 : startIndexInclusive;
+        int i = Math.max(startIndexInclusive, 0);
         int j = Math.min(array.length, endIndexExclusive) - 1;
         Object tmp;
         while (j > i) {

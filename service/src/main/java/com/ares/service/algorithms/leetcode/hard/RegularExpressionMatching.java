@@ -41,89 +41,96 @@ public class RegularExpressionMatching {
         System.out.println(algorithms1("ab", ".*.."));
     }
 
+    /**
+     * 动态规划
+     * 时间复杂度：O(mn)，其中 m 和 n 分别是字符串 s 和 p 的长度。我们需要计算出所有的状态，并且每个状态在进行转移时的时间复杂度为 O(1)。
+     * 空间复杂度：O(mn)，即为存储所有状态使用的空间。
+     */
     private static boolean algorithms1(String s, String p) {
-        // TODO 白写了，不对
-        if (s.equals(p) || ".*".equals(p)) {
-            return true;
-        }
-        int si = s.length() - 1;
-        int pi = p.length() - 1;
-        while (pi >= 0 && si >= 0) {
-            char pc = p.charAt(pi);
-            if (pc == '.' || pc == '*') {
-                break;
-            }
-            char sc = s.charAt(si);
-            if (sc != pc) {
-                return false;
-            }
-            si--;
-            pi--;
-        }
-        if (pi < 0) {
-            return false;
-        }
-        p = p.substring(0, pi + 1);
-        if (si < 0) {
-            return matchEmpty(p);
-        }
-        s = s.substring(0, si + 1);
-        int m = 0;
-        int n = 0;
-        char lastPc = '.';
-        while (m <= si && n <= pi) {
-            char sc = s.charAt(m);
-            char pc = p.charAt(n);
-            if (sc == pc || pc == '.') {
-                if (pc == '.' && n < pi && p.charAt(n + 1) == '*') {
-                    n += 2;
-                    continue;
-                }
-                m++;
-                n++;
-                lastPc = pc;
-                continue;
-            }
-            if (pc == '*') {
-                if (lastPc != '.' && lastPc != sc) {
-                    n++;
-                    continue;
-                }
-            } else {
-                if (n < pi) {
-                    char nextSc = p.charAt(n + 1);
-                    if (nextSc == '*') {
-                        n += 2;
-                        lastPc = '.';
-                        continue;
+        int m = s.length();
+        int n = p.length();
+        // 表示s的前i个字符能否和p的前j个字符匹配
+        boolean[][] dp = new boolean[m + 1][n + 1];
+        dp[0][0] = true;
+        for (int i = 0; i <= m; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                if (p.charAt(j - 1) == '*') {
+                    dp[i][j] = dp[i][j - 2];
+                    if (matches(s, p, i, j - 1)) {
+                        dp[i][j] = dp[i][j] || dp[i - 1][j];
+                    }
+                } else {
+                    if (matches(s, p, i, j)) {
+                        dp[i][j] = dp[i - 1][j - 1];
                     }
                 }
-                return false;
             }
-            m++;
         }
-        if (n > pi && m > si) {
-            return true;
-        }
-        if (n > pi) {
-            return false;
-        }
-        return matchEmpty(p.substring(n));
+        return dp[m][n];
     }
 
-    private static boolean matchEmpty(String p) {
-        boolean flag = false;
-        for (char c : p.toCharArray()) {
-            if (c != '*') {
-                if (flag) {
-                    return false;
-                }
-                flag = true;
-            } else {
-                flag = false;
+    private static boolean matches(String s, String p, int i, int j) {
+        if (i == 0) {
+            return false;
+        }
+        if (p.charAt(j - 1) == '.') {
+            return true;
+        }
+        return s.charAt(i - 1) == p.charAt(j - 1);
+    }
+
+    private static boolean self(String s, String p) {
+        if (s == null || p == null) {
+            return false;
+        }
+        int sl = s.length();
+        int pl = p.length();
+        // 表示s的前i个字符能否和p的前j个字符匹配，默认全部为false
+        boolean[][] dp = new boolean[sl + 1][pl + 1];
+        dp[0][0] = true;
+
+        // 初始化dp二维数组的第一列，此时s的位置是0，代表空串
+        // 如果p的第j-1个位置是*，则j的状态等于j-2的状态
+        for (int j = 1; j <= pl; j++) {
+            // 情况1: 如果p的第j-1个位置是*，则j的状态等于j-2的状态
+            // 例如：s='' p='a*' 相当于p向前看2个位置如果匹配，则*相当于重复0个字符
+            if (p.charAt(j - 1) == '*') {
+                dp[0][j] = dp[0][j - 2];
             }
         }
-        return !flag;
+
+        for (int i = 1; i <= sl; i++) {
+            for (int j = 1; j <= pl; j++) {
+                /*
+                 * 情况2: 如果s和p当前字符是相等的 或者p当前位置是. 则当前的dp[i][j] 可由dp[i - 1][j - 1]转移过来
+                 * 当前位置相匹配，则s和p都向前看一位 如果前面所有字符相匹配 则当前位置前面的所有字符也匹配
+                 * 例如：s='XXXa' p='XXX.' 或者 s='XXXa' p='XXXa'
+                 */
+                if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.') {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else if (p.charAt(j - 1) == '*') {
+                    /*
+                     * 情况3: 进入当前字符不匹配的分支 如果当前p是* 则有可能会匹配
+                     * s当前位置和p前一个位置相同 或者p前一个位置等于. 则有三种可能
+                     * 其中一种情况能匹配 则当前位置的状态也能匹配
+                     * dp[i][j - 2]：p向前看2个位置，相当于*重复了0次，
+                     * dp[i][j - 1]：p向前看1个位置，相当于*重复了1次
+                     * dp[i - 1][j]：s向前看一个位置，相当于*重复了n次
+                     * 例如 s='XXXa' p='XXXa*'
+                     */
+                    if (s.charAt(i - 1) == p.charAt(j - 2) || p.charAt(j - 2) == '.') {
+                        dp[i][j] = dp[i][j - 2] || dp[i][j - 1] || dp[i - 1][j];
+                    } else {
+                        /*
+                         * 情况4: s当前位置和p前2个位置不匹配，则相当于*重复了0次
+                         * 例如 s='XXXb' p='XXXa*' 当前位置的状态和p向前看2个位置的状态相同
+                         */
+                        dp[i][j] = dp[i][j - 2];
+                    }
+                }
+            }
+        }
+        return dp[sl][pl];
     }
 
 }

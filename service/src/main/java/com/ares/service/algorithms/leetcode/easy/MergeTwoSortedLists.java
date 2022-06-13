@@ -3,27 +3,27 @@ package com.ares.service.algorithms.leetcode.easy;
 /**
  * 21. 合并两个有序链表
  * https://leetcode.cn/problems/merge-two-sorted-lists/
- *
+ * <p>
  * 将两个升序链表合并为一个新的升序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
- *
+ * <p>
  * 示例 1：
  * 输入：1->2->4, 1->3->4
  * 输出：1->1->2->3->4->4
- *
+ * <p>
  * 示例 2：
  * 输入：l1 = [], l2 = []
  * 输出：[]
- *
+ * <p>
  * 示例 3：
  * 输入：l1 = [], l2 = [0]
  * 输出：[0]
- *
+ * <p>
  * 提示：
  * 两个链表的节点数目范围是 [0, 50]
  * -100 <= Node.val <= 100
  * l1 和 l2 均按 非递减顺序 排列
  *
- * @author  0xZzzz
+ * @author 0xZzzz
  * @date 2020/5/1
  */
 public class MergeTwoSortedLists {
@@ -37,13 +37,14 @@ public class MergeTwoSortedLists {
         l2.next = new ListNode(3);
         l2.next.next = new ListNode(4);
 
-        solution1(l1, l2).print();
-        solution2(l1, l2).print();
+//        solution1(l1, l2).print();
+//        solution2(l1, l2).print();
+        self(l1, l2).print();
     }
 
     /**
      * 暴力解法
-     *
+     * <p>
      * 时间复杂度：O(n + m) ，其中 n 和 m 分别为两个链表的长度
      * 空间复杂度：O(1)
      */
@@ -67,7 +68,7 @@ public class MergeTwoSortedLists {
 
     /**
      * 递归
-     *
+     * <p>
      * 时间复杂度：O(n + m)
      * 空间复杂度：：O(n + m)，其中 n 和 m 分别为两个链表的长度。递归调用需要消耗栈空间
      */
@@ -106,6 +107,29 @@ public class MergeTwoSortedLists {
             System.out.println(sb);
         }
 
+    }
+
+    /**
+     * 时间复杂度：O(n + m) ，其中 n 和 m 分别为两个链表的长度
+     * 空间复杂度：O(1)
+     */
+    private static ListNode self(ListNode list1, ListNode list2) {
+        ListNode head = new ListNode(0);
+        ListNode current = head;
+        while (list1 != null || list2 != null) {
+            int v1 = list1 == null ? Integer.MAX_VALUE : list1.val;
+            int v2 = list2 == null ? Integer.MAX_VALUE : list2.val;
+            if (v1 < v2) {
+                current.next = list1;
+                current = list1;
+                list1 = list1.next;
+            } else {
+                current.next = list2;
+                current = list2;
+                list2 = list2.next;
+            }
+        }
+        return head.next;
     }
 
 }

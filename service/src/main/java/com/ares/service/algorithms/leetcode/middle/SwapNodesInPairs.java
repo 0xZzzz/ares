@@ -28,7 +28,47 @@ package com.ares.service.algorithms.leetcode.middle;
 public class SwapNodesInPairs {
 
     public static void main(String[] args) {
+        ListNode n5 = new ListNode(5);
+        ListNode n4 = new ListNode(4, n5);
+        ListNode n3 = new ListNode(3, n4);
+        ListNode n2 = new ListNode(2, n3);
+        ListNode n1 = new ListNode(1, n2);
+        print(self(n3));
+    }
 
+    /**
+     * 时间复杂度 O(N)
+     * 空间复杂度 O(1)
+     */
+    private static ListNode self(ListNode l) {
+        if (l == null) {
+            return null;
+        }
+        ListNode head = new ListNode(0);
+        ListNode tmp = head;
+        tmp.next = l;
+        while (tmp.next != null && tmp.next.next != null) {
+            ListNode n = tmp.next;
+            ListNode nn = n.next;
+            n.next = nn.next;
+            nn.next = n;
+            tmp.next = nn;
+            tmp = n;
+        }
+        return head.next;
+    }
+
+    private static void print(ListNode head) {
+        if (head == null) {
+            System.out.println("null");
+        } else {
+            StringBuilder sb = new StringBuilder().append(head.val);
+            while (head.next != null) {
+                head = head.next;
+                sb.append(head.val);
+            }
+            System.out.println(sb);
+        }
     }
 
     private static class ListNode {

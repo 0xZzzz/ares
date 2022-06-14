@@ -1,5 +1,9 @@
 package com.ares.service.algorithms.leetcode.middle;
 
+import org.apache.commons.compress.utils.Lists;
+
+import java.util.List;
+
 /**
  * 22. 括号生成
  * https://leetcode.cn/problems/generate-parentheses/
@@ -23,7 +27,21 @@ package com.ares.service.algorithms.leetcode.middle;
 public class GenerateParentheses {
 
     public static void main(String[] args) {
+        List<String> ss = Lists.newArrayList();
+        all(6, "", ss);
+        System.out.println(ss);
+    }
 
+    private static void all(int n, String s, List<String> collect) {
+        String s1 = s + "(";
+        String s2 = s + ")";
+        if (s1.length() == n) {
+            collect.add(s1);
+            collect.add(s2);
+            return;
+        }
+        all(n, s1, collect);
+        all(n, s2, collect);
     }
 
 }

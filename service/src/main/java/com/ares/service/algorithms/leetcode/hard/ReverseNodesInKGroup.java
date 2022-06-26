@@ -29,7 +29,64 @@ package com.ares.service.algorithms.leetcode.hard;
 public class ReverseNodesInKGroup {
 
     public static void main(String[] args) {
+        ListNode l1 = new ListNode(1);
+        ListNode l2 = new ListNode(2);
+        ListNode l3 = new ListNode(3);
+        ListNode l4 = new ListNode(4);
+        ListNode l5 = new ListNode(5);
+        ListNode l6 = new ListNode(6);
+        l1.next = l2;
+        l2.next = l3;
+        l3.next = l4;
+        l4.next = l5;
+        l5.next = l6;
+        print(self(l1, 2));
+    }
 
+    private static void print(ListNode head) {
+        if (head == null) {
+            System.out.println("null");
+        } else {
+            StringBuilder sb = new StringBuilder().append(head.val);
+            while (head.next != null) {
+                head = head.next;
+                sb.append(head.val);
+            }
+            System.out.println(sb);
+        }
+    }
+
+    private static ListNode self(ListNode head, int k) {
+        ListNode hair = new ListNode(0);
+        hair.next = head;
+        ListNode pre = hair;
+        while (head != null) {
+            ListNode tail = head;
+            for (int i = 1; i < k && tail != null; i++) {
+                tail = tail.next;
+            }
+            if (tail == null) {
+                pre.next = head;
+                break;
+            }
+            ListNode next = tail.next;
+            tail.next = null;
+            pre.next = reverse(head);
+            pre = head;
+            head = next;
+        }
+        return hair.next;
+    }
+
+    private static ListNode reverse(ListNode l) {
+        ListNode pre = null;
+        while (l != null) {
+            ListNode tmp = l;
+            l = l.next;
+            tmp.next = pre;
+            pre = tmp;
+        }
+        return pre;
     }
 
     private static class ListNode {

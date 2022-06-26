@@ -1,5 +1,10 @@
 package com.ares.service.algorithms.leetcode.hard;
 
+import com.ares.service.algorithms.leetcode.easy.MergeTwoSortedLists;
+import com.ares.service.algorithms.leetcode.middle.RemoveNthNodeFromEndOfList;
+
+import java.util.List;
+
 /**
  * 23. 合并K个升序链表
  * https://leetcode.cn/problems/merge-k-sorted-lists/
@@ -41,7 +46,62 @@ package com.ares.service.algorithms.leetcode.hard;
 public class MergeKSortedLists {
 
     public static void main(String[] args) {
+        ListNode l1 = new ListNode(1);
+        l1.next = new ListNode(2);
+        l1.next.next = new ListNode(4);
 
+        ListNode l2 = new ListNode(1);
+        l2.next = new ListNode(3);
+        l2.next.next = new ListNode(4);
+
+        ListNode l3 = new ListNode(1);
+        l3.next = new ListNode(3);
+        l3.next.next = new ListNode(5);
+        print(self(l1, l2, l3));
+    }
+
+    private static void print(ListNode head) {
+        if (head == null) {
+            System.out.println("null");
+        } else {
+            StringBuilder sb = new StringBuilder().append(head.val);
+            while (head.next != null) {
+                head = head.next;
+                sb.append(head.val);
+            }
+            System.out.println(sb);
+        }
+    }
+
+    private static ListNode self(ListNode... lists) {
+        ListNode head = new ListNode(Integer.MIN_VALUE);
+        for (ListNode l : lists) {
+            ListNode tmp;
+            while (l != null) {
+                tmp = l.next;
+                append(head, l);
+                l = tmp;
+            }
+        } 
+        return head.next;
+    }
+
+    private static void append(ListNode l1, ListNode l2) {
+        ListNode tmp = l1;
+        while (true) {
+            if (l2.val <= l1.val) {
+                tmp.next = l2;
+                l2.next = l1;
+                return;
+            }
+            if (l1.next == null) {
+                l1.next = l2;
+                l2.next = null;
+                return;
+            }
+            tmp = l1;
+            l1 = l1.next;
+        }
     }
 
     private static class ListNode {

@@ -27,21 +27,25 @@ import java.util.List;
 public class GenerateParentheses {
 
     public static void main(String[] args) {
-        List<String> ss = Lists.newArrayList();
-        all(6, "", ss);
-        System.out.println(ss);
+        System.out.println(self(3));
     }
 
-    private static void all(int n, String s, List<String> collect) {
-        String s1 = s + "(";
-        String s2 = s + ")";
-        if (s1.length() == n) {
-            collect.add(s1);
-            collect.add(s2);
+    private static List<String> self(int n) {
+        List<String> ss = Lists.newArrayList();
+        self(n, "", ss, 0, 0);
+        return ss;
+    }
+
+    private static void self(int n, String s, List<String> collect, int lc, int rc) {
+        if (lc > n || rc > lc) {
             return;
         }
-        all(n, s1, collect);
-        all(n, s2, collect);
+        if (s.length() == n * 2) {
+            collect.add(s);
+            return;
+        }
+        self(n, s + "(", collect, lc + 1, rc);
+        self(n, s + ")", collect, lc, rc + 1);
     }
 
 }

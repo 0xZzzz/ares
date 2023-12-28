@@ -40,7 +40,7 @@ public class DecoratorTest {
         displayItems.forEach(itemList -> {
             StringBuilder printString = new StringBuilder();
             itemList.forEach(item -> printString.append(item.getName()).append("  "));
-            System.err.println(printString.toString());
+            System.err.println(printString);
         });
     }
 

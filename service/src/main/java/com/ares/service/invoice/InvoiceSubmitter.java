@@ -2,7 +2,7 @@ package com.ares.service.invoice;
 
 
 import com.ares.service.message.Invoice;
-import com.ares.domain.model.Order;
+import com.ares.domain.model.order.Order;
 
 /**
  * 发票提交

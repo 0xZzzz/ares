@@ -2,7 +2,7 @@ package com.ares.service.invoice;
 
 import com.ares.enums.InvoiceTypeEnum;
 import com.ares.service.message.Invoice;
-import com.ares.domain.model.Order;
+import com.ares.domain.model.order.Order;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

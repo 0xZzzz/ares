@@ -1,7 +1,5 @@
 package com.ares.service.test;
 
-import com.ares.common.utils.SpringContextUtils;
-
 /**
  * 测试工具类
  *

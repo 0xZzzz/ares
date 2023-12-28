@@ -1,6 +1,6 @@
 package com.ares.service.message.handler.order;
 
-import com.ares.common.exception.SystemException;
+import com.ares.domain.exception.SystemException;
 import com.ares.enums.OrderStatusEnum;
 import com.ares.domain.model.Order;
 import com.ares.service.message.OrderMessage;

@@ -1,6 +1,6 @@
 package com.ares.service.settlement;
 
-import com.ares.common.utils.Alarm;
+import com.ares.service.message.observer.Alarm;
 import com.ares.enums.ChargeTypeEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.ares.common.exception;
+package com.ares.domain.exception;
 
 /**
  * 业务异常

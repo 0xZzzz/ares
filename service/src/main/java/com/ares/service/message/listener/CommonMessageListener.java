@@ -1,6 +1,6 @@
 package com.ares.service.message.listener;
 
-import com.ares.common.exception.BusinessException;
+import com.ares.domain.exception.BusinessException;
 import com.ares.service.message.handler.MessageHandler;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;

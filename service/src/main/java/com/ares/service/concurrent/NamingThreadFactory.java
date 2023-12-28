@@ -1,4 +1,4 @@
-package com.ares.common.utils;
+package com.ares.service.concurrent;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;

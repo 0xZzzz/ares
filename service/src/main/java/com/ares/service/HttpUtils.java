@@ -1,4 +1,4 @@
-package com.ares.common.utils;
+package com.ares.service;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -42,10 +42,6 @@ public class HttpUtils {
             log.error("getFile error! url: {}", url, e);
             throw new RuntimeException("get bytes from url error!");
         }
-    }
-
-    public static void main(String[] args) {
-        getBytes("https://image-dev2.zacz.cn/tny/item/idcardImage/20210409/9cb8546d756fa2c72bf33fc6def3a5e8.jpg");
     }
 
     public static String post(String url, String body) {

@@ -1,7 +1,5 @@
 package com.ares.service.concurrent;
 
-import com.ares.common.utils.NamingThreadFactory;
-
 import java.util.Random;
 import java.util.concurrent.*;
 

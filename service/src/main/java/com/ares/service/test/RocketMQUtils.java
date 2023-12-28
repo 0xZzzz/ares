@@ -1,4 +1,4 @@
-package com.ares.common.utils;
+package com.ares.service.test;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;

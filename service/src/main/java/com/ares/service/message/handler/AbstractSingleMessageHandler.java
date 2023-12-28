@@ -1,7 +1,6 @@
 package com.ares.service.message.handler;
 
-import com.ares.common.exception.SystemException;
-import com.ares.common.utils.CollectionUtils;
+import com.ares.domain.exception.SystemException;
 import org.apache.rocketmq.common.message.MessageExt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +22,7 @@ public abstract class AbstractSingleMessageHandler<D> implements MessageHandler 
         if (messageList.size() != 1) {
             throw new SystemException("消息数量不为1");
         }
-        MessageExt message = CollectionUtils.first(messageList);
+        MessageExt message = messageList.get(0);
         // 解析消息
         D domain = parse(message);
         logger.info("handler messageDomain: {}", domain);

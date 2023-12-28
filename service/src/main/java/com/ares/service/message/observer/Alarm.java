@@ -1,4 +1,4 @@
-package com.ares.common.utils;
+package com.ares.service.message.observer;
 
 /**
  * 告警

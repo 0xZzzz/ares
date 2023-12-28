@@ -1,5 +1,8 @@
 package com.ares.service;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * @author  0xZzzz
  * @date 2020/2/25
@@ -27,7 +30,15 @@ public class Test {
     public final static long ONE_DAY_MILLIS = ONE_HOUR_MILLIS * 24;
 
     public static void main(String[] args) {
-        System.out.println(parseTimeoutExpression(60000L));
+        String init = "Bob is a Bird... Bob is a Plane... Bob is Superman!";
+        String changed = init.replace("Bob is", "It's");
+        changed = changed.replace("...", ";");
+        System.out.println(changed);
+
+//        Calendar c = Calendar.getInstance();
+//        c.add(Calendar.DAY_OF_YEAR, -30);
+//        Date endTime = c.getTime();
+//        System.out.println(endTime);
     }
 
     /**

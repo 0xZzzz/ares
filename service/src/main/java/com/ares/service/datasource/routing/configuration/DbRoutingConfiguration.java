@@ -20,6 +20,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.lang.NonNull;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,7 +34,7 @@ import java.util.stream.Collectors;
  * @date 2021/11/17
  */
 @Configuration
-@ConditionalOnExpression("${halo.db.routing.enable:true}")
+@ConditionalOnExpression("${db.routing.enable:true}")
 @EnableConfigurationProperties(DbRoutingProperties.class)
 public class DbRoutingConfiguration implements ApplicationContextAware {
 
@@ -41,17 +42,17 @@ public class DbRoutingConfiguration implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
 
-    @Bean(name = "haloDataSourceSwitchInterceptor")
+    @Bean(name = "dataSourceSwitchInterceptor")
     public DataSourceRoutingInterceptor dataSourceSwitchInterceptor() {
         return new DataSourceRoutingInterceptor();
     }
 
-    @Bean(name = "haloDataSourceBeanPostProcessor")
+    @Bean(name = "dataSourceBeanPostProcessor")
     public DataSourceUpgradeBeanPostProcessor changeDataSourceBeanPostProcessor() {
         return new DataSourceUpgradeBeanPostProcessor();
     }
 
-    @Bean("haloDataAccessAdvisor")
+    @Bean("dataAccessAdvisor")
     public AspectJExpressionPointcutAdvisor dataAccessAdvisor(
             @Autowired(required = false) DbRoutingProperties properties) {
         LOGGER.warn("switchDataSourceAdvisor properties: {}", properties);
@@ -99,7 +100,7 @@ public class DbRoutingConfiguration implements ApplicationContextAware {
     }
 
     @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+    public void setApplicationContext(@NonNull ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
 }

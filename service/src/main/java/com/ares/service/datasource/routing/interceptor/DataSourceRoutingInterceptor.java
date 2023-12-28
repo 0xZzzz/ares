@@ -94,7 +94,7 @@ public class DataSourceRoutingInterceptor implements Interceptor {
         Field transactionField = BaseExecutor.class.getDeclaredField("transaction");
         transactionField.setAccessible(true);
         DataSource masterSlaveDataSource = DataSourceHelper.upgrade(dataSource);
-        LOGGER.warn("haloframe generate MasterSlaveDataSource {}", masterSlaveDataSource);
+        LOGGER.warn("generate MasterSlaveDataSource {}", masterSlaveDataSource);
         if (masterSlaveDataSource != null) {
             // 替换 Executor 中的数据源为支持读写分离的数据源
             transactionField.set(baseExecutor, new SpringManagedTransaction(masterSlaveDataSource));

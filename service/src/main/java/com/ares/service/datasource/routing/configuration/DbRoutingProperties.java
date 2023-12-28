@@ -16,7 +16,7 @@ import java.util.Map;
 @Getter
 @Setter
 @ToString
-@ConfigurationProperties(prefix = "halo.db.routing")
+@ConfigurationProperties(prefix = "db.routing")
 public class DbRoutingProperties {
 
     /**

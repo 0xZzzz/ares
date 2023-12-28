@@ -1,6 +1,6 @@
 package com.ares.service.message.handler.order;
 
-import com.ares.service.message.Order;
+import com.ares.domain.model.Order;
 import com.ares.service.message.OrderMessage;
 import com.ares.enums.OrderStatusEnum;
 import com.ares.service.message.observer.OrderFinishObserver;
@@ -45,7 +45,7 @@ public class FinishOrderHandler extends AbstractOrderStatusHandler implements Ap
      * @param updateParam 更新订单参数
      */
     private void finishOrder(Order updateParam) {
-        logger.info("您的订单已完成。orderId: {}", updateParam.getOrderId());
+        logger.info("您的订单已完成。orderId: {}", updateParam.getId());
     }
 
     /**

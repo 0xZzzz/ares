@@ -1,7 +1,7 @@
 package com.ares.service.message.observer;
 
 import com.ares.enums.ChargeTypeEnum;
-import com.ares.service.message.Order;
+import com.ares.domain.model.Order;
 import com.ares.service.settlement.ChargeRequest;
 import com.ares.service.settlement.Selector;
 
@@ -19,7 +19,7 @@ public abstract class AbstractChargeObserver extends AbstractOrderFinishObserver
             return;
         }
         ChargeRequest request = new ChargeRequest();
-        request.setOrderId(order.getOrderId());
+        request.setOrderId(order.getId());
         request.setUserId(order.getUserId());
         request.setChargeType(getChargeType().getType());
         processRequest(request, order);

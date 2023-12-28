@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class ChargeRequest {
 
-    private Long orderId;
+    private String orderId;
 
     private Long userId;
 

@@ -28,6 +28,6 @@ public class Invoice {
 
     private String invoiceCode;
 
-    private Long orderId;
+    private String orderId;
 
 }

@@ -1,6 +1,5 @@
-package com.ares.service.message;
+package com.ares.domain.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -16,7 +15,20 @@ import lombok.ToString;
 @ToString
 public class Order {
 
-    private Long orderId;
+    /**
+     * 订单id
+     */
+    private String id;
+
+    /**
+     * 店铺id
+     */
+    private String storeId;
+
+    /**
+     * 店铺名称
+     */
+    private String storeName;
 
     private Integer orderStatus;
 
@@ -37,10 +49,6 @@ public class Order {
     private Integer orderType;
 
     public Order() {
-    }
-
-    public Order(Long orderId) {
-        this.orderId = orderId;
     }
 
 }

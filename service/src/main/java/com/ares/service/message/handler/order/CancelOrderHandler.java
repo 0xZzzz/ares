@@ -1,6 +1,6 @@
 package com.ares.service.message.handler.order;
 
-import com.ares.service.message.Order;
+import com.ares.domain.model.Order;
 import com.ares.service.message.OrderMessage;
 import com.ares.enums.OrderStatusEnum;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,7 @@ public class CancelOrderHandler extends AbstractOrderStatusHandler {
     }
 
     @Override
-    protected void handle(OrderMessage message, Order order, Order updateParam) throws Exception {
+    protected void handle(OrderMessage message, Order order, Order updateParam) {
         cancelOrder(updateParam);
         notifyUser(order.getUserId());
     }
@@ -36,7 +36,7 @@ public class CancelOrderHandler extends AbstractOrderStatusHandler {
      * @param updateParam 更新参数
      */
     private void cancelOrder(Order updateParam) {
-        System.out.println("取消订单" + updateParam.getOrderId());
+        System.out.println("取消订单" + updateParam.getId());
     }
 
     /**

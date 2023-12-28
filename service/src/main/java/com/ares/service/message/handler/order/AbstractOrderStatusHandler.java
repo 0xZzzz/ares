@@ -2,13 +2,11 @@ package com.ares.service.message.handler.order;
 
 import com.ares.common.exception.SystemException;
 import com.ares.enums.OrderStatusEnum;
-import com.ares.service.message.Order;
+import com.ares.domain.model.Order;
 import com.ares.service.message.OrderMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
-
-import java.util.Date;
 
 /**
  * 订单状态变更处理器
@@ -27,7 +25,7 @@ public abstract class AbstractOrderStatusHandler implements OrderStatusHandler, 
             return;
         }
         validate(order.getOrderStatus());
-        handle(message, order, getUpdateParam(order.getOrderId()));
+        handle(message, order, getUpdateParam(order.getId()));
     }
 
     /**
@@ -35,9 +33,9 @@ public abstract class AbstractOrderStatusHandler implements OrderStatusHandler, 
      *
      * @param orderId 订单id
      */
-    private Order getUpdateParam(long orderId) {
+    private Order getUpdateParam(String orderId) {
         Order updateParam = new Order();
-        updateParam.setOrderId(orderId);
+        updateParam.setId(orderId);
         updateParam.setOrderStatus(getSupportedOrderStatus().getStatus());
         return updateParam;
     }

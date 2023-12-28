@@ -2,7 +2,7 @@ package com.ares.service.invoice;
 
 import com.ares.enums.InvoiceTypeEnum;
 import com.ares.service.message.Invoice;
-import com.ares.service.message.Order;
+import com.ares.domain.model.Order;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -46,7 +46,7 @@ public class InvoiceSubmitHandler {
      * @param order 订单实体
      */
     public void submitRequisition(Order order) {
-        Invoice invoice = getInvoice(order.getOrderId());
+        Invoice invoice = getInvoice(order.getId());
         if (invoice == null) {
             return; //这里为null说明这笔订单不需要开发票，直接返回
         }
@@ -59,7 +59,7 @@ public class InvoiceSubmitHandler {
      * @param orderId 订单id
      * @return 发票信息
      */
-    private Invoice getInvoice(Long orderId) {
+    private Invoice getInvoice(String orderId) {
         Invoice invoice = new Invoice();
         invoice.setOrderId(orderId);
         invoice.setInvoiceType(InvoiceTypeEnum.VAT.getCode());

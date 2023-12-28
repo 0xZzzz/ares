@@ -1,7 +1,7 @@
 package com.ares.service.invoice;
 
 import com.ares.service.message.Invoice;
-import com.ares.service.message.Order;
+import com.ares.domain.model.Order;
 import com.ares.enums.OrderTypeEnum;
 import org.springframework.stereotype.Service;
 

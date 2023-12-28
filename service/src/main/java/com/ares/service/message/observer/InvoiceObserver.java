@@ -1,7 +1,7 @@
 package com.ares.service.message.observer;
 
 import com.ares.service.invoice.InvoiceSubmitHandler;
-import com.ares.service.message.Order;
+import com.ares.domain.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

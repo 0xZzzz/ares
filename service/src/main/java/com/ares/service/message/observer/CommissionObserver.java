@@ -1,7 +1,7 @@
 package com.ares.service.message.observer;
 
 import com.ares.enums.ChargeTypeEnum;
-import com.ares.service.message.Order;
+import com.ares.domain.model.Order;
 import com.ares.service.settlement.ChargeRequest;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package com.ares.service.invoice;
 
-import com.ares.model.Invoice;
-import com.ares.model.Order;
+import com.ares.service.message.Invoice;
+import com.ares.service.message.Order;
 
 /**
  * @author 0xzzzz

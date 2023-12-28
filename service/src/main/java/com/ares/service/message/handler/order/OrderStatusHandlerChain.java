@@ -1,7 +1,7 @@
 package com.ares.service.message.handler.order;
 
-import com.ares.model.Order;
-import com.ares.model.OrderMessage;
+import com.ares.service.message.Order;
+import com.ares.service.message.OrderMessage;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,8 @@
 package com.ares.service.message.handler.order;
 
 import com.alibaba.fastjson.JSON;
-import com.ares.model.Order;
-import com.ares.model.OrderMessage;
+import com.ares.service.message.Order;
+import com.ares.service.message.OrderMessage;
 import com.ares.enums.OrderStatusEnum;
 import com.ares.enums.OrderTypeEnum;
 import com.ares.service.message.handler.AbstractSingleMessageHandler;

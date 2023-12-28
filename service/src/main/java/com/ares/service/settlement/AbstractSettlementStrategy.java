@@ -1,10 +1,6 @@
 package com.ares.service.settlement;
 
 import com.ares.common.utils.Alarm;
-import com.ares.model.ChargeInfo;
-import com.ares.model.ChargeRequest;
-import com.ares.model.FinanceChargeRequest;
-import com.ares.model.FinanceChargeResponse;
 import com.ares.enums.ChargeTypeEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

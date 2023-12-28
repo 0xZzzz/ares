@@ -1,6 +1,6 @@
 package com.ares.service.message.observer;
 
-import com.ares.model.Order;
+import com.ares.service.message.Order;
 
 /**
  * 订单完成观察者

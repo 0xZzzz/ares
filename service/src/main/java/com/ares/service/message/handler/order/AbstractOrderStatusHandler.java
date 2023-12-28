@@ -1,9 +1,9 @@
 package com.ares.service.message.handler.order;
 
 import com.ares.common.exception.SystemException;
-import com.ares.model.Order;
-import com.ares.model.OrderMessage;
 import com.ares.enums.OrderStatusEnum;
+import com.ares.service.message.Order;
+import com.ares.service.message.OrderMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
@@ -39,7 +39,6 @@ public abstract class AbstractOrderStatusHandler implements OrderStatusHandler, 
         Order updateParam = new Order();
         updateParam.setOrderId(orderId);
         updateParam.setOrderStatus(getSupportedOrderStatus().getStatus());
-        updateParam.setModified(new Date());
         return updateParam;
     }
 

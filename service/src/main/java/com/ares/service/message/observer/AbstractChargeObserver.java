@@ -1,8 +1,8 @@
 package com.ares.service.message.observer;
 
-import com.ares.model.ChargeRequest;
-import com.ares.model.Order;
 import com.ares.enums.ChargeTypeEnum;
+import com.ares.service.message.Order;
+import com.ares.service.settlement.ChargeRequest;
 import com.ares.service.settlement.Selector;
 
 /**

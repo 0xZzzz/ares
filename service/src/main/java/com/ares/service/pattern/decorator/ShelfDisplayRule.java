@@ -1,7 +1,5 @@
 package com.ares.service.pattern.decorator;
 
-import com.ares.model.Item;
-
 import java.util.List;
 
 /**

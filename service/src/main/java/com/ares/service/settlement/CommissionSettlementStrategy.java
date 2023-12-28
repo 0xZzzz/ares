@@ -1,6 +1,5 @@
 package com.ares.service.settlement;
 
-import com.ares.model.ChargeInfo;
 import com.ares.enums.ChargeTypeEnum;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,8 @@
 package com.ares.service.invoice;
 
-import com.ares.model.Invoice;
-import com.ares.model.Order;
 import com.ares.enums.InvoiceTypeEnum;
+import com.ares.service.message.Invoice;
+import com.ares.service.message.Order;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -1,9 +1,9 @@
 package com.ares.controller;
 
-import com.ares.dao.CompanyDAO;
-import com.ares.dao.PersonDAO;
-import com.ares.model.Company;
-import com.ares.model.Person;
+import com.ares.infrastructure.dal.entity.Company;
+import com.ares.infrastructure.dal.entity.Person;
+import com.ares.infrastructure.dal.mapper.CompanyDAO;
+import com.ares.infrastructure.dal.mapper.PersonDAO;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

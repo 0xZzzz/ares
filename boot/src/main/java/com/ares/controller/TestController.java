@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.ares.common.utils.RocketMQUtils;
 import com.ares.enums.OrderTypeEnum;
 import com.ares.enums.PaymentTypeEnum;
-import com.ares.model.OrderMessage;
+import com.ares.service.message.OrderMessage;
 import com.ares.service.test.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

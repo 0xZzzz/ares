@@ -1,6 +1,6 @@
 package com.ares.service.message.observer;
 
-import com.ares.model.Order;
+import com.ares.service.message.Order;
 import com.ares.enums.ChargeTypeEnum;
 import com.ares.enums.PaymentTypeEnum;
 import org.springframework.stereotype.Service;

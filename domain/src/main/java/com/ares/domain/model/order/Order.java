@@ -5,12 +5,10 @@ import lombok.Getter;
 import lombok.ToString;
 
 import java.util.Date;
+import java.util.List;
 
 /**
- * 订单实体
- *
- * @author 0xZzzz
- * @date 2018/10/16
+ * 订单
  */
 @Getter
 @ToString
@@ -126,5 +124,10 @@ public class Order {
      * 卖家备注
      */
     private String sellerMemo;
+
+    /**
+     * 订单行
+     */
+    private List<OrderLine> orderLines;
 
 }

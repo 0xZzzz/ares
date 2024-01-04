@@ -1,10 +1,10 @@
 package com.ares.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.ares.service.test.RocketMQUtils;
+import com.ares.infrastructure.message.RocketMQUtils;
 import com.ares.enums.OrderTypeEnum;
 import com.ares.enums.PaymentTypeEnum;
-import com.ares.service.message.OrderMessage;
+import com.ares.infrastructure.message.OrderMessage;
 import com.ares.service.test.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

@@ -11,4 +11,18 @@
 
     <artifactId>application</artifactId>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>com.ares</groupId>
+            <artifactId>api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ares</groupId>
+            <artifactId>domain</artifactId>
+        </dependency>
+
+    </dependencies>
+
 </project>

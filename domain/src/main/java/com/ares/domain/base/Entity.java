@@ -1,23 +1,23 @@
-package com.ares.domain.model.order;
+package com.ares.domain.base;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * 店铺
+ * 领域实体
  */
 @Getter
 @AllArgsConstructor
-public class Store {
+public class Entity {
 
     /**
-     * 店铺id
+     * 实体唯一标识
      */
     private final String id;
 
     /**
-     * 店铺名称
+     * 版本号
      */
-    private final String name;
+    private Integer version;
 
 }

@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * @author fansheng
- * @date 2023/12/28
+ * 商家
  */
 @Getter
 @AllArgsConstructor

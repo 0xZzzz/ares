@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * 商品
+ * SKU
  */
 @Getter
 @ToString

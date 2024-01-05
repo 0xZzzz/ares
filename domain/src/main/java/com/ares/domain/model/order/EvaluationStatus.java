@@ -4,9 +4,6 @@ import lombok.AllArgsConstructor;
 
 /**
  * 评价状态
- *
- * @author fansheng
- * @date 2023/12/28
  */
 @AllArgsConstructor
 public enum EvaluationStatus {

@@ -1,6 +1,6 @@
 package com.ares.domain.model.order;
 
-import lombok.AllArgsConstructor;
+import com.ares.domain.base.Entity;
 import lombok.Getter;
 
 import java.util.Date;
@@ -9,8 +9,7 @@ import java.util.Date;
  * 订单行
  */
 @Getter
-@AllArgsConstructor
-public class OrderLine {
+public class OrderLine extends Entity {
 
     /**
      * 订单行id
@@ -40,6 +39,13 @@ public class OrderLine {
     /**
      * sku
      */
-    private Sku sku;
+    private final Sku sku;
 
+    public OrderLine(String id, Integer version, String id1, String orderId, Date createTime, Sku sku) {
+        super(id, version);
+        this.id = id1;
+        this.orderId = orderId;
+        this.createTime = createTime;
+        this.sku = sku;
+    }
 }
